@@ -58,8 +58,8 @@ $(document).ready(function () {
     //$(".kr-popin-button").click();
     //KR.setFormConfig({formToken: $('#formTokenv2').val()});
 
-    var email = $('#email'), celular = $('#celular_v2'), dni = $('#dni'), name = $('#name'), edad = $('#edad');
-
+    var email = $('#emailform'), celular = $('#celular_v2'), dni = $('#dni'), name = $('#name'), edad = $('#edad');
+  
     var instanceCodeCountry = $("[name=celular_v2]");
     instanceCodeCountry.intlTelInput();
     var iCodeCountry = instanceCodeCountry.intlTelInput('getSelectedCountryData').dialCode;
@@ -70,7 +70,7 @@ $(document).ready(function () {
 
     //alert( $('#btn-crear_cuenta').data("tipo_token") );
     //alert( $('#' + $('#btn-crear_cuenta').data("tipo_token")).val() );
-
+    
     if (email.val().length === 0) {
       email.focus();
       email.closest('.form-group').find('.help-block').html('Ingresar email');
@@ -126,7 +126,7 @@ $(document).ready(function () {
     } else {
       $('#btn-crear_cuenta').prop('disabled', true);
       $('#btn-crear_cuenta').html('<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Creando');
-
+    
       $.ajax({
         url: base_url + 'Curso/crearUsuario',
         type: "POST",
