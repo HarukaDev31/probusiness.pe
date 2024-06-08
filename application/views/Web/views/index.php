@@ -215,7 +215,7 @@
               </div>
               <div class="mt-md-5 mt-4 mb-4 mb-md-0 px-4 px-md-5">
                 <h5 class=" fs-5 text-center text-md-start ">Viaje a China</h5>
-                <p class="small2 text-center text-md-start text-dark3 mt-2 ">Ofrecemos un paquete integral que cubre todos los aspectos de su Viaje a China a China. Desde la organización de reuniones con proveedores locales hasta la logística del viaje.</p>
+                <p class="small2 text-center text-md-start text-dark3 mt-2 ">Ofrecemos un paquete integral que cubre todos los aspectos de su Viaje a China. Desde la organización de reuniones con proveedores locales hasta la logística del viaje.</p>
                 <a href="<?php echo base_url("viaje_negocios"); ?>" class="border justify-content-center border-black d-flex btn-beneficio text-center d-md-auto small2 col-md-10 text-dark text-decoration-none rounded-3 py-2 px-4">
                   <p class="my-auto">Más información</p>
                   <i class="bi bi-arrow-right fs-6 ms-3 text-dark"></i>
@@ -382,11 +382,11 @@
   </div>
 
 
-<div  id="contacto" class="py-0 py-sm-5 gradiente-naranja2">
+<div  id="contacto" class="py-0 py-sm-5 gradiente-naranja2 ">
   <div  class="container pt-4 py-md-5">
-    <div class="mb-0 d-flex rounded-25 my-5 shadow-form p-md-5 bg-white overflow-hidden flex-md-row flex-column position-relative justify-content-md-between">
+    <div class="mb-0 d-flex rounded-25 my-5 shadow-form p-4 p-md-5 bg-white overflow-hidden flex-md-row flex-column position-relative justify-content-md-between">
        <div class=" col-md-5 px-md-4 d-flex flex-column justify-content-center wow fadeInUp" data-wow-duration=".5s" data-wow-delay=".2s">
-          <h6 class=" text-dark3 fs-2 mb-3  fw-bold">¿Necesitas más información?</h6>
+          <h6 class=" text-dark3 fs-2 mb-3  fw-bold">¿Necesitas más información?xd</h6>
           <p class="text-dark mt-3 mb-4 mb-md-0 font-epilogue">Nuestro equipo está aquí para ayudarte a crecer según tus condiciones. Ponte en contacto directamente con nosotros si tienes alguna pregunta.</p>
        </div>
         <div class="col-md-6 px-md-4  h-100 wow fadeInUp" data-wow-duration=".5s" data-wow-delay=".2s">
@@ -425,13 +425,19 @@
                     />
                     <span class="help-block text-danger" id="error"></span>
                   </div>
+                  <div class="form-group mb-5 col-md-12 col-lg-12 mb-md-4">
+                    <select class="form-select text-dark small border-input rounded-0 py-2" id="select-servicios" name="select">
+                      <option value="" disabled selected>--¿En qué servicio te encuentras interesado?--</option>
+                      <option value="Nu_Agente_Compra" >Agente de compra</option>
+                      <option value="web_curso">Curso de importación</option>
+                      <option value="Nu_Carga_Consolidada">Carga consolidada</option>
+                      <option value="Nu_Importacion_Grupal">Importación grupal</option>
+                      <option value="Nu_Viaje_Negocios">Viaje de China</option>
+                    </select>
+                    <span class="help-block text-danger" id="error"></span>
+                  </div>
                   <div class="form-group mb-5 col-md-12 col-lg-12 mb-md-2">
-                    <textarea name="message" id="message" class="form-control text-dark small border-input rounded-0" placeholder="¿En qué servicio te encuentras interesado?
-                    -	Curso de importación
-                    -	Agente de compra
-                    -	Carga consolidada
-                    -	Gestión de importación
-                    -	Viaje de negocio (A china)
+                    <textarea name="message" id="message" class="form-control text-dark small border-input rounded-0" placeholder="Cuentanos más sobre lo que necesitas
                     " cols="3" rows="3" style="height: 100px;"></textarea>
                     <span class="help-block text-danger" id="error"></span>
                   </div>

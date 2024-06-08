@@ -26,34 +26,54 @@ $(function () {
         // Stop the browser from submitting the form.
         e.preventDefault();
 
-        var nombres = $('#firstname'), lastname = $('#lastname'), celular = $('#celular'), email = $('#email');
-
+        var nombres = $('#firstname'), lastname = $('#lastname'), celular = $('#celular'), email = $('#email'),
+        servicios=$('#select-servicios');
         $('.help-block').empty();
-        if (nombres.val().length < 6) {
+        let isValid = true;
+        if (nombres.val().length ==0) {
             nombres.focus();
             nombres.closest('.form-group').find('.help-block').html('Ingresar nombre');
             nombres.closest('.form-group').removeClass('text-success').addClass('text-danger');
-        }else if (lastname.val().length < 6) {
+            isValid = false;
+        
+        } if (lastname.val().length ==0) {
             lastname.focus();
             lastname.closest('.form-group').find('.help-block').html('Ingresar apellido');
             lastname.closest('.form-group').removeClass('text-success').addClass('text-danger');
-        } else if (celular.val().length === 0) {
+            isValid = false;
+        
+        }  if (celular.val().length === 0) {
             celular.focus();
             celular.closest('.form-group').find('.help-block').html('Ingresar celular');
             celular.closest('.form-group').removeClass('text-success').addClass('text-danger');
-        } else if (celular.val().length < 9) {
+            isValid = false;
+        
+        }  if (celular.val().length < 9) {
             celular.focus();
             celular.closest('.form-group').find('.help-block').html('Ingresar 9 dígitos');
             celular.closest('.form-group').removeClass('text-success').addClass('text-danger');
-        } else if (email.val().length === 0) {
+            isValid = false;
+        
+        }  if (email.val().length === 0) {
             email.focus();
             email.closest('.form-group').find('.help-block').html('Ingresar email');
             email.closest('.form-group').removeClass('text-success').addClass('text-danger');
-        } else if (!checkEmail(email.val())) {
+            isValid = false;
+        
+        }  if (!checkEmail(email.val())) {
             email.focus();
             email.closest('.form-group').find('.help-block').html('Email inválido');
             email.closest('.form-group').addClass('text-success').removeClass('text-danger');
-        } else {
+            isValid = false;
+        
+        } if(servicios.length!=0 && servicios.val() == null){
+            servicios.focus();
+            servicios.closest('.form-group').find('.help-block').html('Seleccionar servicio');
+            servicios.closest('.form-group').removeClass('text-success').addClass('text-danger');
+            isValid = false;
+        
+            
+        }if(isValid==true){
             $('.help-block').empty();
 
             $('#btn-contact').text('');
@@ -62,7 +82,7 @@ $(function () {
 
             // Serialize the form data.
             var formData = $(form).serialize();
-
+            console.log(formData);  
             // Submit the form using AJAX.
             $.ajax({
                 type: 'POST',
@@ -118,34 +138,52 @@ $(function () {
         // Stop the browser from submitting the form.
         e.preventDefault();
 
-        var nombres = $('#firstname'), lastname = $('#lastname'), celular = $('#celular'), email = $('#email');
-
+        var nombres = $('#firstname'), lastname = $('#lastname'), celular = $('#celular'), email = $('#email'),servicios=$('#select-servicios');;
+        let isValid = true;
         $('.help-block').empty();
-        if (nombres.val().length < 6) {
+        if (nombres.val().length ==0) {
             nombres.focus();
             nombres.closest('.form-group').find('.help-block').html('Ingresar nombre');
             nombres.closest('.form-group').removeClass('text-success').addClass('text-danger');
-        }else if (lastname.val().length < 6) {
+            isValid = false;
+        } if (lastname.val().length ==0) {
             lastname.focus();
             lastname.closest('.form-group').find('.help-block').html('Ingresar apellido');
             lastname.closest('.form-group').removeClass('text-success').addClass('text-danger');
-        } else if (celular.val().length === 0) {
+            isValid = false;
+
+        }  if (celular.val().length === 0) {
             celular.focus();
             celular.closest('.form-group').find('.help-block').html('Ingresar celular');
             celular.closest('.form-group').removeClass('text-success').addClass('text-danger');
-        } else if (celular.val().length < 9) {
+            isValid = false;
+
+        }  if (celular.val().length < 9) {
             celular.focus();
             celular.closest('.form-group').find('.help-block').html('Ingresar 9 dígitos');
             celular.closest('.form-group').removeClass('text-success').addClass('text-danger');
-        } else if (email.val().length === 0) {
+            isValid = false;
+
+        }  if (email.val().length === 0) {
             email.focus();
             email.closest('.form-group').find('.help-block').html('Ingresar email');
             email.closest('.form-group').removeClass('text-success').addClass('text-danger');
-        } else if (!checkEmail(email.val())) {
+            isValid = false;
+
+        }  if (!checkEmail(email.val())) {
             email.focus();
             email.closest('.form-group').find('.help-block').html('Email inválido');
             email.closest('.form-group').addClass('text-success').removeClass('text-danger');
-        } else {
+            isValid = false;
+
+        }if(servicios.length!=0 && servicios.val() == null){
+            servicios.focus();
+            servicios.closest('.form-group').find('.help-block').html('Seleccionar servicio');
+            servicios.closest('.form-group').removeClass('text-success').addClass('text-danger');
+            isValid = false;
+        
+            
+        } if(isValid==true) {
             $('.help-block').empty();
 
             $('#btn-contact_email').text('');
@@ -159,7 +197,7 @@ $(function () {
             $.ajax({
                 type: 'POST',
                 dataType: 'json',
-                url: base_url + 'sendemail',
+                url: base_url + 'sendwhatsapp',
                 data: formData
             })
             .done(function (response) {

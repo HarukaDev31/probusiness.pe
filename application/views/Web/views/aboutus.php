@@ -271,15 +271,20 @@
                     />
                     <span class="help-block text-danger" id="error"></span>
                   </div>
+                  <div class="form-group mb-5 col-md-12 col-lg-12 mb-md-4">
+                    <select class="form-select text-dark small border-input rounded-0 py-2" id="select-servicios" name="select">
+                      <option value="" disabled selected>--¿En qué servicio te encuentras interesado?--</option>
+                      <option value="Nu_Agente_Compra" >Agente de compra</option>
+                      <option value="web_curso">Curso de importación</option>
+                      <option value="Nu_Carga_Consolidada">Carga consolidada</option>
+                      <option value="Nu_Importacion_Grupal">Importación grupal</option>
+                      <option value="Nu_Viaje_Negocios">Viaje de China</option>
+                    </select>
+                    <span class="help-block text-danger" id="error"></span>
+                  </div>
                   <div class="form-group mb-5 col-md-12 col-lg-12 mb-md-2">
-                    <textarea name="message" id="message" class="form-control text-dark small border-input rounded-0" placeholder="¿En qué servicio te encuentras interesado?
-                    -	Curso de importación
-                    -	Agente de compra
-                    -	Carga consolidada
-                    -	Gestión de importación
-                    -	Viaje de negocio (A china)
-                    "
-                    cols="3" rows="3" style=""></textarea>
+                    <textarea name="message" id="message" class="form-control text-dark small border-input rounded-0" placeholder="Cuentanos más sobre lo que necesitas
+                    " cols="3" rows="3" style="height: 100px;"></textarea>
                     <span class="help-block text-danger" id="error"></span>
                   </div>
                   <div class="form-group mb-5 col-md-12 col-lg-12 mb-md-5" style="margin-bottom: 0px !important; margin-top: 1rem !important;">
