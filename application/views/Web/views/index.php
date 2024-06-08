@@ -33,7 +33,7 @@
       </div>
     </div>
   </div>
-  
+
 </div>
 <div class="py-md-5 mt-4 mt-md-0 border-top border-bottom position-relative wow fadeInUp" data-wow-duration=".5s" data-wow-delay=".2s" id="nosotros">
   <div class=" d-flex flex-column flex-md-row container">
@@ -91,16 +91,16 @@
   <div class="position-relative w-75 container pb-5 z-index">
       <h6 class=" text-dark3 fs-3 mb-5 text-start text-md-center fw-bold">Ayudar a nuestros clientes es fundamental</h6>
       <div class="d-flex flex-wrap">
-        <div class="col-md-6 col-12 overflow-hiden">
+        <div class="col-md-6 col-12 ov  erflow-hiden">
            <div class="p-1 wow fadeInUp w-100 position-relative box-imagen-mk" data-wow-duration=".5s" data-wow-delay=".2s">
-              <img src="<?php echo base_url("assets/img/home/15M.png?ver=1.0.1"); ?>" class="img-fluid w-100" alt="">
+              <img src="<?php echo base_url("assets/img/home/15M.png?ver=1.0.1"); ?>" class="img-fluid w-100 " style="height:40vh" alt="">
               <div class="position-absolute box-hv top-0 z-index h-100 w-100 d-flex justify-content-center flex-column">
                 <img src="<?php echo base_url("assets/img/home/15Ml.png?ver=1.0.1"); ?>" class="img-fluid col-8 col-md-6 col-lg-7 mx-auto d-block" alt="">
                 <p class="text-white text-center fs-4 mt-3">De soles en importaciones</p>
               </div>
            </div>
            <div class="p-1 wow fadeInUp w-100 position-relative box-imagen-mk" data-wow-duration=".5s" data-wow-delay=".2s">
-              <img src="<?php echo base_url("assets/img/home/50000.png?ver=1.0.1"); ?>" class="img-fluid w-100" alt="">
+              <img src="<?php echo base_url("assets/img/home/50000.png?ver=1.0.1"); ?>" class="img-fluid w-100" style="height:30vh" alt="">
               <div class="position-absolute box-hv top-0 z-index h-100 w-100 d-flex justify-content-center flex-column">
                 <img src="<?php echo base_url("assets/img/home/10K.png?ver=3.0.1"); ?>" class="img-fluid col-6 col-md-6 col-lg-7 mx-auto d-block" alt="">
                 <p class="text-white text-center fs-4 mt-3">Clientes satisfechos</p>
@@ -109,14 +109,14 @@
         </div>
         <div class="col-md-6 col-12 overflow-hiden">
           <div class="p-1 wow fadeInUp w-100 position-relative box-imagen-mk" data-wow-duration=".5s" data-wow-delay=".2s">
-              <img src="<?php echo base_url("assets/img/home/200_contenedores_hq.png?ver=2.0.1"); ?>" class="img-fluid w-100" alt="">
+              <img src="<?php echo base_url("assets/img/home/200_contenedores_hq.png?ver=2.0.1"); ?>" class="img-fluid w-100" style="height:30vh" alt="">
               <div class="position-absolute box-hv top-0 z-index h-100 w-100 d-flex justify-content-center flex-column">
                 <img src="<?php echo base_url("assets/img/home/200_contenedores_hq_letras.png?ver=1.0.1"); ?>" class="img-fluid col-6 col-md-6 col-lg-7 mx-auto d-block" alt="">
                 <p class="text-white text-center fs-4 mt-3">Contenedores HQ</p>
               </div>
            </div>
            <div class="p-1 wow fadeInUp w-100 position-relative box-imagen-mk" data-wow-duration=".5s" data-wow-delay=".2s">
-              <img src="<?php echo base_url("assets/img/home/1M.png?ver=1.0.1"); ?>" class="img-fluid w-100" alt="">
+              <img src="<?php echo base_url("assets/img/home/1M.png?ver=1.0.1"); ?>" class="img-fluid w-100" style="height:40vh" alt="">
               <div class="position-absolute box-hv top-0 z-index h-100 w-100 d-flex justify-content-center flex-column">
                 <img src="<?php echo base_url("assets/img/home/3K.png?ver=3.0.1"); ?>" class="img-fluid col-6 col-md-6 col-lg-7 mx-auto d-block" alt="">
                 <p class="text-white text-center fs-4 mt-3">productos importados</p>
@@ -159,7 +159,7 @@
                   </div>
               </div>
           </div>
-          <div class="ps-3 col-12 col-md-6">
+          <div class="ps-3 col-12 col-md-6 mt-4">
               <div class="d-flex h-100 p-0 box-benefits bg-white flex-column flex-md-row justify-content-md-center">
                   <div class="col-md-5 position-relative">
                     <img src="<?php echo base_url("assets/img/home/carga_consolidada_home.png"); ?>" class="w-100" alt="ProBusiness Carga Consolidada">
@@ -427,7 +427,7 @@
                   </div>
                   <div class="form-group mb-5 col-md-12 col-lg-12 mb-md-4">
                     <select class="form-select text-dark small border-input rounded-0 py-2" id="select-servicios" name="select">
-                      <option value="" disabled selected>--¿En qué servicio te encuentras interesado?--</option>
+                      <option value="" disabled selected>¿En qué servicio te encuentras interesado?</option>
                       <option value="Nu_Agente_Compra" >Agente de compra</option>
                       <option value="web_curso">Curso de importación</option>
                       <option value="Nu_Carga_Consolidada">Carga consolidada</option>
