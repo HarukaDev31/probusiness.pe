@@ -350,7 +350,7 @@ class Inicio extends CI_Controller
 
         $this->email->from('noreply@lae.one', 'ProBusiness'); //de
         //reemplazar correo de destino de mensajes marketing@probusiness.pe
-        $this->email->to('harukakasugano31@gmail.com'); //para
+        $this->email->to('marketing@probusiness.pe'); //para
         //$this->email->to($result->No_Usuario);//para //mvillegas@probusiness.pe
         $this->email->subject($message_whastapp);
         $this->email->message($message_email);
@@ -464,7 +464,7 @@ class Inicio extends CI_Controller
         $message_email = $this->load->view('Correos/puesto_trabajo', $data_email, true);
 
         $this->email->from('noreply@lae.one', 'ProBusiness'); //de
-        $this->email->to('harukakasugano31@gmail.com'); //para
+        $this->email->to('marketing@probusiness.pe'); //para
         //$this->email->to($result->No_Usuario);//para //mvillegas@probusiness.pe
         $this->email->subject($name . ' se postuló para trabajar en ProBusiness');
         $this->email->message($message_email);
