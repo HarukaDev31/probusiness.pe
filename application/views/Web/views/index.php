@@ -386,7 +386,7 @@
   <div  class="container pt-4 py-md-5">
     <div class="mb-0 d-flex rounded-25 my-5 shadow-form p-4 p-md-5 bg-white overflow-hidden flex-md-row flex-column position-relative justify-content-md-between">
        <div class=" col-md-5 px-md-4 d-flex flex-column justify-content-center wow fadeInUp" data-wow-duration=".5s" data-wow-delay=".2s">
-          <h6 class=" text-dark3 fs-2 mb-3  fw-bold">¿Necesitas más información?xd</h6>
+          <h6 class=" text-dark3 fs-2 mb-3  fw-bold">¿Necesitas más información?</h6>
           <p class="text-dark mt-3 mb-4 mb-md-0 font-epilogue">Nuestro equipo está aquí para ayudarte a crecer según tus condiciones. Ponte en contacto directamente con nosotros si tienes alguna pregunta.</p>
        </div>
         <div class="col-md-6 px-md-4  h-100 wow fadeInUp" data-wow-duration=".5s" data-wow-delay=".2s">
