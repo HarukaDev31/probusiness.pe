@@ -17,7 +17,7 @@ class Inicio extends CI_Controller
     public function index()
     {
         $this->load->view('Web/header');
-        $iNumeroWhatsApp = '51953314683'; //stephany
+        $iNumeroWhatsApp = '51992583703'; //stephany
         $sMessageWhatsApp = 'Hola+ProBusiness+deseo+m%C3%A1s+informaci%C3%B3n'; //stephany
         $this->load->view('Web/layout/menu', array(
             'iNumeroWhatsApp' => $iNumeroWhatsApp,
@@ -30,7 +30,7 @@ class Inicio extends CI_Controller
     public function politicas()
     {
         $this->load->view('Web/header');
-        $iNumeroWhatsApp = '51953314683'; //stephany
+        $iNumeroWhatsApp = '51992583703'; //stephany
         $this->load->view('Web/layout/menu', array(
             'iNumeroWhatsApp' => $iNumeroWhatsApp,
         ));
@@ -40,7 +40,7 @@ class Inicio extends CI_Controller
     public function terminos()
     {
         $this->load->view('Web/header');
-        $iNumeroWhatsApp = '51953314683'; //stephany
+        $iNumeroWhatsApp = '51992583703'; //stephany
         $this->load->view('Web/layout/menu', array(
             'iNumeroWhatsApp' => $iNumeroWhatsApp,
         ));
@@ -50,7 +50,7 @@ class Inicio extends CI_Controller
     public function nosotros()
     {
         $this->load->view('Web/header');
-        $iNumeroWhatsApp = '51953314683'; //stephany
+        $iNumeroWhatsApp = '51992583703'; //stephany
         $this->load->view('Web/layout/menu', array(
             'iNumeroWhatsApp' => $iNumeroWhatsApp,
         ));
@@ -60,7 +60,7 @@ class Inicio extends CI_Controller
     public function agente_compra()
     {
         $this->load->view('Web/header');
-        $iNumeroWhatsApp = '51913656663'; //agente_compra
+        $iNumeroWhatsApp = '51992583703'; //agente_compra
         $this->load->view('Web/layout/menu', array(
             'iNumeroWhatsApp' => $iNumeroWhatsApp,
         ));
@@ -72,7 +72,7 @@ class Inicio extends CI_Controller
     public function carga_consolidada()
     {
         $this->load->view('Web/header');
-        $iNumeroWhatsApp = '51991351346'; //alexis carga consolidad
+        $iNumeroWhatsApp = '51992583703'; //alexis carga consolidad
         $this->load->view('Web/layout/menu', array(
             'iNumeroWhatsApp' => $iNumeroWhatsApp,
         ));
@@ -84,7 +84,7 @@ class Inicio extends CI_Controller
     public function importacion_grupal()
     {
         $this->load->view('Web/header');
-        $iNumeroWhatsApp = '51991351346'; //alexis carga consolidad
+        $iNumeroWhatsApp = '51992583703'; //alexis carga consolidad
         $this->load->view('Web/layout/menu', array(
             'iNumeroWhatsApp' => $iNumeroWhatsApp,
         ));
@@ -98,7 +98,7 @@ class Inicio extends CI_Controller
         $this->load->view('Web/header', array(
             'iCssFileCurso' => true,
         ));
-        $iNumeroWhatsApp = '51991351346'; //alexis carga consolidad
+        $iNumeroWhatsApp = '51992583703'; //alexis carga consolidad
         $this->load->view('Web/layout/menu', array(
             'iNumeroWhatsApp' => $iNumeroWhatsApp,
         ));
@@ -204,7 +204,7 @@ class Inicio extends CI_Controller
             'iPagarIzipay' => 1,
             'client' => $client,
         ));
-        $iNumeroWhatsApp = '51953314683'; //stephany
+        $iNumeroWhatsApp = '51992583703'; //stephany
         $sMessageWhatsApp = 'Hola+ProBusiness+deseo+m%C3%A1s+informaci%C3%B3n+sobre+el+curso+de+importaciones'; //stephany
         $this->load->view('Web/layout/menu', array(
             'iNumeroWhatsApp' => $iNumeroWhatsApp,
@@ -224,7 +224,7 @@ class Inicio extends CI_Controller
     public function viaje_negocios()
     {
         $this->load->view('Web/header');
-        $iNumeroWhatsApp = '51953314683'; //stephany
+        $iNumeroWhatsApp = '51992583703'; //stephany
 
         $arrPais = $this->InicioModel->getPais();
         $this->load->view('Web/layout/menu', array(

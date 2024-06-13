@@ -236,7 +236,7 @@
           <div>
             <h5 class="mb-4 text-white fs-3 wow fadeInUp" data-wow-duration=".5s" data-wow-delay=".2s">¿Qué es carga consolidada?</h5>
             <p class="text-white mb-3 small wow fadeInUp" data-wow-duration=".5s" data-wow-delay=".2s">Se trata de compartir espacio en un contenedor con otros importadores para reducir costos logísticos.</p>
-            <a class="py-3 px-4 rounded-3  d-block hover-blanco text-center col-12 col-md-10  text-dark bg-white text-decoration-none btn-descarga small wow fadeInUp btn-cel-background" data-wow-duration=".5s" data-wow-delay=".2s" target="_blank" rel="noopener noreferrer" href="https://api.whatsapp.com/send?phone=51991351346&text=¡Hola&nbsp;ProBusiness!&nbsp;deseo&nbsp;comunicarme&nbsp;con&nbsp;algún&nbsp;representante.">Más información <i class="bi bi-arrow-down ms-2"></i></a>
+            <a class="py-3 px-4 rounded-3  d-block hover-blanco text-center col-12 col-md-10  text-dark bg-white text-decoration-none btn-descarga small wow fadeInUp btn-cel-background" data-wow-duration=".5s" data-wow-delay=".2s" target="_blank" rel="noopener noreferrer" href="https://api.whatsapp.com/send?phone=51992583703&text=¡Hola&nbsp;ProBusiness!&nbsp;deseo&nbsp;comunicarme&nbsp;con&nbsp;algún&nbsp;representante.">Más información <i class="bi bi-arrow-down ms-2"></i></a>
           </div>
         </div>
         <div class="col-md-8 ps-md-5 position-relative col-12">
