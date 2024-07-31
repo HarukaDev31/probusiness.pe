@@ -126,7 +126,7 @@ $(document).ready(function () {
     } else {
       $('#btn-crear_cuenta').prop('disabled', true);
       $('#btn-crear_cuenta').html('<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Creando');
-    
+      console.log($('#form-registro').serialize());
       $.ajax({
         url: base_url + 'Curso/crearUsuario',
         type: "POST",

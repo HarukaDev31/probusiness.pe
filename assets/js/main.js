@@ -249,7 +249,7 @@ function checkEmail(email) {
 
 function pagar(iTipoPago){
     $('.div-pago_curso').show();
-    $('#email').focus();
+
     if(iTipoPago==1){
         $('#btn-crear_cuenta').data('tipo_token','formToken');
         $('#btn-crear_cuenta').attr('data-tipo_token', 'formToken');
@@ -260,4 +260,16 @@ function pagar(iTipoPago){
         $('#btn-crear_cuenta').data('tipo_token','formTokenv3');
         $('#btn-crear_cuenta').attr('data-tipo_token', 'formTokenv3');
     }
+    setTimeout(function() {
+        // Ocultar el spinner
+        
+        // Mostrar el contenido del formulario
+
+        
+        // Verificar si el elemento #emailform existe y hacer foco
+        if ($('#btn-crear_cuenta').length) {
+            $('#btn-crear_cuenta').focus();
+        }
+    }, 1000); 
+    
 }

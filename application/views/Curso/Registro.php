@@ -178,19 +178,19 @@
 							<div class="row mb-0" style="height: 0px !important;">
 								<div class="col-12 col-sm-12 col-md-12 col-lg-12 mb-0" style="visibility: hidden;">
 									<!-- payment form -->
-									<div class="kr-embedded" kr-popin kr-form-token="<?php echo $formToken;?>">
+										<div class="kr-embedded" kr-popin kr-form-token="<?php echo $formToken;?>">
 
-										<!-- payment form fields -->
-										<div class="kr-pan"></div>
-										<div class="kr-expiry"></div>
-										<div class="kr-security-code"></div>
+											<!-- payment form fields -->
+											<div class="kr-pan"></div>
+											<div class="kr-expiry"></div>
+											<div class="kr-security-code"></div>
 
-										<!-- payment form submit button -->
-										<button class="kr-payment-button"></button>
+											<!-- payment form submit button -->
+											<button class="kr-payment-button"></button>
 
-										<!-- error zone -->
-										<div class="kr-form-error"></div>
-									</div>
+											<!-- error zone -->
+											<div class="kr-form-error"></div>
+										</div>
 								</div>
 							</div>
                 		<?php echo form_close(); ?>

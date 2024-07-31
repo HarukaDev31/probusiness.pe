@@ -129,16 +129,16 @@ class Inicio extends CI_Controller
             $_SESSION['distrito'] = $this->CursoModel->getDistrito();
         }
 
-        /* cargando izipay */
+        //update izipay variables
 
         /* Username, password and endpoint used for server to server web-service calls */
         //(En el Back Office) Copiar Usuario
-        Lyra\Client::setDefaultUsername("78655451");
+        Lyra\Client::setDefaultUsername("81411861");
 
         //(En el Back Office) Copiar Contraseña de test
         //Lyra\Client::setDefaultPassword("testpassword_cC71d22bmbbkpXlhKVzxy3BVG1FZm7Z4ILlTKL3lZDB4o");
         //(En el Back Office) Copiar Contraseña de produccion
-        Lyra\Client::setDefaultPassword("prodpassword_sYm6SzBGdM2XIgf3COOOclUcbOTcaYTt3iZlz1WcDdSD7");
+        Lyra\Client::setDefaultPassword("prodpassword_xcB3HEJ7QapGAuFV1h8lpQawobshT9TcLjxE88DSvmXpm");
 
         //(En el Back Office) Copiar Contraseña de Nombre del servidor API REST
         Lyra\Client::setDefaultEndpoint("https://api.micuentaweb.pe");
@@ -147,18 +147,18 @@ class Inicio extends CI_Controller
         //(En el Back Office) Copiar Clave pública de test
         //Lyra\Client::setDefaultPublicKey("78655451:testpublickey_07vuSHY0ErsDxStV4VSfZfiPrIKXMg4ZAM7WWzYSqYUoL");
         //(En el Back Office) Copiar Clave pública de produccion
-        Lyra\Client::setDefaultPublicKey("78655451:publickey_U2z6srU6cQGJPbbJwm6ssrpyiWdE1ZAom4AYgjcXwkUlm");
+        Lyra\Client::setDefaultPublicKey("81411861:publickey_QAAACVPh5FTZELHq9ERBxPdOnnDOyKHA3BxfCSCnYTe9s");
 
         /* SHA256 key */
         //(En el Back Office) Clave HMAC-SHA-256 de test
         //Lyra\Client::setDefaultSHA256Key("G6pEoysq3vLZBpOYSfY7ZInsXS2o6OHodOd40Q8BjhnDU");
         //(En el Back Office) Clave HMAC-SHA-256 de produccion
-        Lyra\Client::setDefaultSHA256Key("KhHFiouLSgCFB9gsRzafqcwpppQlY6YzzxXwTTLU4mG5S");
+        Lyra\Client::setDefaultSHA256Key("LAG3JHyRVzI1mQeWW4xx5syC0Lh7fL7k78snNsx9CmsR6");
 
         $client = new Lyra\Client();
 
         $store = array(
-            "amount" => 159 * 100,
+            "amount" => 200* 100,
             //"amount" => 109 * 100,
             "currency" => "PEN",
             "orderId" => uniqid("id"),
@@ -173,7 +173,7 @@ class Inicio extends CI_Controller
         $responsev2 = $client->post("V4/Charge/CreatePayment", $store);
 
         $store = array(
-            "amount" => 380 * 100,
+            "amount" => 385 * 100,
             "currency" => "PEN",
             "orderIdv3" => uniqid("id") . '3',
         );
