@@ -173,7 +173,7 @@ class Inicio extends CI_Controller
         $responsev2 = $client->post("V4/Charge/CreatePayment", $store);
 
         $store = array(
-            "amount" => 385 * 100,
+            "amount" => 380 * 100,
             "currency" => "PEN",
             "orderIdv3" => uniqid("id") . '3',
         );
