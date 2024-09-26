@@ -459,7 +459,7 @@
             <div class="col-md-4 col-6 mb-3 px-2 wow fadeInUp" data-wow-duration=".5s" data-wow-delay=".2s">
                 <div class="w-100">
                     <div class="bx-img">
-                      <img src="<?php echo base_url("assets/img/nosotros/team_miguel.jpeg"); ?>" class="img-fluid" alt="CEO Miguel Villegas">
+                      <img src="<?php echo base_url("assets/img/nosotros/team_miguel2.png"); ?>" class="img-fluid" alt="CEO Miguel Villegas">
                       <button class="border-0 bg-transparent"><i class="bi bi-plus-square"></i></button>
                     </div>
                     <div class="mt-md-3 mt-3">
@@ -468,7 +468,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 col-6 mb-3 px-2 wow fadeInUp" data-wow-duration=".5s" data-wow-delay=".2s">
+            <!-- <div class="col-md-4 col-6 mb-3 px-2 wow fadeInUp" data-wow-duration=".5s" data-wow-delay=".2s">
                 <div class="w-100">
                     <div class="bx-img">
                       <img src="<?php echo base_url("assets/img/nosotros/team_daniel.jpeg"); ?>" class="img-fluid" alt="Director Comex Daniel Castillo">
@@ -479,7 +479,7 @@
                       <p class="text-white">Director Comex</p>
                     </div>
                 </div>
-            </div>
+            </div> -->
              <div class="col-md-4 col-6 mb-3 px-2 wow fadeInUp" data-wow-duration=".5s" data-wow-delay=".2s">
                 <div class="w-100">
                     <div class="bx-img">
