@@ -159,7 +159,7 @@
             <h6 class=" text-white mb-5 mb-md-0 fs-2 my-auto  wow fadeInUp" data-wow-duration=".5s" data-wow-delay=".2s">Nuestro equipo de trabajo</h6>
          </div>
          <div class="col-md-9 col-12 my-auto d-flex flex-wrap">
-            <div class="col-md-8 col-6 mb-6 px-2 wow fadeInUp" data-wow-duration=".5s" data-wow-delay=".2s">
+            <div class="col-md-4 col-6 mb-6 px-2 wow fadeInUp" data-wow-duration=".5s" data-wow-delay=".2s">
                 <div class="w-100">
                     <div class="bx-img">
                          <img src="<?php echo base_url("assets/img/nosotros/team_miguel2.png"); ?>" class="img-fluid" alt="CEO Miguel Villegas">
