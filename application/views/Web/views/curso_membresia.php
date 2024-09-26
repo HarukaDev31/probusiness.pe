@@ -802,7 +802,7 @@
               </div>
          </div>
          <div class="col-md-12 shorts my-auto d-flex flex-wrap">
-            <div class="col-md-4 col-6 mb-3 px-2 wow fadeInUp" data-wow-duration=".5s" data-wow-delay=".2s">
+            <div class="col-md-8 col-6 mb-3 px-2 wow fadeInUp" data-wow-duration=".5s" data-wow-delay=".2s">
                 <div class="w-100">
                     <div class="bx-img">
                       <img src="<?php echo base_url("assets/img/nosotros/team_miguel2.png"); ?>" class="img-fluid" alt="CEO Miguel Villegas">
