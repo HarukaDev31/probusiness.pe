@@ -124,7 +124,7 @@
             <span class="text-decoration-line-through text-secondary fs-6 my-auto"
               >S/ 550</span
             >
-            <span class="t-plam ms-2 my-auto">S/ 380</span>
+            <span class="t-plam ms-2 my-auto">S/ 385</span>
           </div>
           <!-- <span class="t-plam">Cobro anual recurrente de S/799</span> -->
           <span class="t-plam fs-6 fw-bold text-dark">Beneficios</span>
@@ -200,7 +200,7 @@
             <span class="text-decoration-line-through text-secondary fs-6 my-auto"
               >S/ 550</span
             >
-            <span class="t-plam ms-2 my-auto">S/ 380</span>
+            <span class="t-plam ms-2 my-auto">S/ 385</span>
           </div>
           <!-- <span class="t-plam">Cobro anual recurrente de S/799</span> -->
           <span class="t-plam fs-6 fw-bold text-dark">Beneficios</span>
