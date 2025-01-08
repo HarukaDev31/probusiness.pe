@@ -76,7 +76,7 @@
           <span class="t-plam t-2 fs-4 text-dark fw-bold"> Plan Premium </span>
           <!-- <span class="t-plam t-1-1">Anual</span> -->
         </div>
-        <span class="t-plam t-1 text-dark">Clase en Vivo (6 días en Zoom)</span>
+        <span class="t-plam t-1 text-dark">Clase en Vivo (4 días en Zoom)</span>
         <div class="m1 t-3 d-flex">
           <span class="text-decoration-line-through text-secondary fs-6 my-auto"
             >S/ 400</span
@@ -145,7 +145,7 @@
           </span>
           <!-- <span class="t-plam t-1-1">Anual</span> -->
         </div>
-        <span class="t-plam t-1 text-dark">Clase en Vivo (6 días en Zoom)</span>
+        <span class="t-plam t-1 text-dark">Clase en Vivo (4 días en Zoom)</span>
         <div class="m1 t-3 d-flex">
           <span class="text-decoration-line-through text-secondary fs-6 my-auto"
             >S/ 550</span

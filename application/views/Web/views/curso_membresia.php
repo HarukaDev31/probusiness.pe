@@ -119,7 +119,7 @@
             <span class="t-plam t-2 fs-4 text-dark fw-bold"> Plan Empresarial</span>
             <!-- <span class="t-plam t-1-1">Anual</span> -->
           </div>
-          <span class="t-plam t-1 text-dark">Clase en Vivo (6 días en Zoom)</span>
+          <span class="t-plam t-1 text-dark">Clase en Vivo (4 días en Zoom)</span>
           <div class="m1 t-3 d-flex">
             <span class="text-decoration-line-through text-secondary fs-6 my-auto"
               >S/ 550</span
@@ -195,7 +195,7 @@
             </span>
             <!-- <span class="t-plam t-1-1">Anual</span> -->
           </div>
-          <span class="t-plam t-1 text-dark">Clase en Vivo (6 días en Zoom)</span>
+          <span class="t-plam t-1 text-dark">Clase en Vivo (4 días en Zoom)</span>
           <div class="m1 t-3 d-flex">
             <span class="text-decoration-line-through text-secondary fs-6 my-auto"
               >S/ 550</span
@@ -230,7 +230,7 @@
             <span class="t-plaml"
               ><i class="bi bi-check2 plami"></i> Alianza Casillero en USA.</span
             >
-            <span class="t-plaml"><i class="bi bi-check2 plami"></i> Boletín informativo por 1 año.</span>
+            <!-- <span class="t-plaml"><i class="bi bi-check2 plami"></i> Boletín informativo por 1 año.</span> -->
             <span class="t-plaml"><i class="bi bi-check2 plami"></i> Acceso de productos novedosos mensuales.</span>
             <span class="t-plaml"><i class="bi bi-check2 plami"></i> Tarifas preferenciales en todos nuestros servicios.</span>
             <span class="t-plaml"><i class="bi bi-check2 plami"></i> Asesoramiento en tu viaje a China.</span>
