@@ -3,7 +3,7 @@
     <div class="pt-4 px-2 px-md-0 bt-footer">
       <div class="d-flex flex-md-row flex-column col-md-12 justify-content-between">
         <div class="d-flex mb-md-0 mb- flex-md-row flex-column flex-wrap col-md-12 d-flex justify-content-md-between">
-          <div class="col-md-6">
+          <div class="col-md-4">
             <div class="col-md-7 my-4 my-md-0 logo-footer">
               <a href="index.php">
                 <img class="img-fluid d-block col-md-8 mx-md-0" src="<?php echo base_url("assets/img/logo-footer.svg"); ?>" alt="Logo ProBusiness" />
@@ -38,7 +38,13 @@
           <a href="https://www.instagram.com/probusinesspe/" target="_blank" rel="noopener noreferrer" class="text-plomo hover-naranja-texto small_footer text-decoration-none d-block mb-2 font-epilogue font-epilogue_300">Instagram</a>
           <a href="https://www.youtube.com/@MiguelVillegasImportaciones" target="_blank" rel="noopener noreferrer" class="text-plomo hover-naranja-texto small_footer text-decoration-none d-block mb-2 font-epilogue font-epilogue_300">YouTube</a>
           <a href="https://www.facebook.com/Probusinesspe" target="_blank" rel="noopener noreferrer" class="text-plomo hover-naranja-texto small_footer text-decoration-none d-block mb-2 font-epilogue font-epilogue_300">Facebook</a>
+
         </div>
+        <div class="col-md-2 mb-3 mb-md-0">
+        <a href="https://librovirtual.pe/r/promundocomex" target="_blank"><img class="book__image" src="<?php echo base_url("assets/complain_book.png"); ?>"></a>
+
+        </div>
+       
       </div>
     </div>
   </div>
@@ -55,3 +61,9 @@
 <script>
   new WOW().init();
 </script>
+<style>
+  .book__image {
+    margin-top: 25px;
+    width: 150.75px;
+    border-radius: 5px;
+  }
