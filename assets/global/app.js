@@ -3,7 +3,7 @@ document.querySelector('.bx-portada').addEventListener('mouseover', function () 
   this.classList.add('hovered');
 });
 */
-
+var base_url=""
 function checkEmail(email) {
 	var caract = new RegExp(
 		/^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/
@@ -377,6 +377,7 @@ $(document).ready(function () {
   </div>
 </div>`;
 	};
+	console.log("init=")
 	$(".marcas").slick({
 		slidesToShow: 6,
 		slidesToScroll: 1,
