@@ -49,8 +49,12 @@
             </div>
           </div> -->
           <div class="ps-lg-4 pr-0 mb-md-0 mb-3 my-lg-auto py-lg-0 pb-3">
+            <a class="py-0 text-white fw-md-normal hover-black fw-bold text-center bg-naranja py-3 px-5 rounded-3 text-md-auto  fs-md-6 fs-3 font-weight-bold text-decoration-none d-block" rel="noopener noreferrer" href="https://tienda.probusiness.pe" target="_blank" rel="noopener noreferrer">Tienda</a>
+          </div>
+          <div class="ps-lg-4 pr-0 mb-md-0 mb-3 my-lg-auto py-lg-0 pb-3">
             <a class="py-0 text-white fw-md-normal hover-naranja fw-bold text-center bg-black py-3 px-5 rounded-3 text-md-auto  fs-md-6 fs-3 font-weight-bold text-decoration-none d-block" rel="noopener noreferrer" href="https://aulavirtualprobusiness.com/login/index.php" target="_blank" rel="noopener noreferrer">Ir a Aula Virtual  </a>
           </div>
+         
         </div>
       </div>
     </div>
