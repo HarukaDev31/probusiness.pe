@@ -283,10 +283,40 @@
                     <span class="help-block text-danger" id="error"></span>
                   </div>
                   <div class="form-group mb-5 col-md-12 col-lg-12 mb-md-2">
+                    <div class="mb-2">
+                      <label class="small2 text-dark mb-1">¿Cómo nos contactaste?</label>
+                      <select class="form-select text-dark small border-input rounded-0 py-2" id="Nu_Como_Entero_Empresa" name="Nu_Como_Entero_Empresa">
+                        <option value="" selected disabled>Selecciona una opción</option>
+                        <option value="1">Tiktok</option>
+                        <option value="2">Facebook</option>
+                        <option value="3">Instagram</option>
+                        <option value="4">Youtube</option>
+                        <option value="5">Familiares/Amigos</option>
+                        <option value="6">Otros</option>
+                      </select>
+                    </div>
+                    <div id="div_otros_como" style="display:none;" class="mb-2">
+                      <input type="text" id="No_Otros_Como_Entero_Empresa" name="No_Otros_Como_Entero_Empresa" class="form-control text-dark small border-input rounded-0 py-2" placeholder="Especifica dónde nos contactaste">
+                    </div>
                     <textarea name="message" id="message" class="form-control text-dark small border-input rounded-0" placeholder="Cuentanos más sobre lo que necesitas
                     " cols="3" rows="3" style="height: 100px;"></textarea>
                     <span class="help-block text-danger" id="error"></span>
                   </div>
+                  <script>
+                    (function(){
+                      var sel = document.getElementById('Nu_Como_Entero_Empresa');
+                      var div = document.getElementById('div_otros_como');
+                      if(sel){
+                        sel.addEventListener('change', function(){
+                          if(this.value=='6'){
+                            div.style.display='block';
+                          }else{
+                            div.style.display='none';
+                          }
+                        });
+                      }
+                    })();
+                  </script>
                   <div class="form-group mb-5 col-md-12 col-lg-12 mb-md-5" style="margin-bottom: 0px !important; margin-top: 1rem !important;">
                     <div role="alert" style="margin-bottom: 0px;" class="div-alert alert-message alert alert-success"></div>
                   </div>

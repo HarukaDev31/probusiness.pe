@@ -113,22 +113,37 @@ $(function () {
                     window.open(url, '_blank');
                 }
             })
-            .fail(function (data) {
+            .fail(function (jqXHR, textStatus, errorThrown) {
+                // show alert area and mark as error
                 $('.div-alert').show();
-                // Make sure that the formMessages div has the 'error' class.
-                $(formMessages).removeClass('alert-primary');
-                $(formMessages).addClass('alert-danger');
+                $(formMessages).removeClass('alert-primary').addClass('alert-danger');
 
+                // restore button
                 $('#btn-contact').text('');
                 $('#btn-contact').attr('disabled', false);
                 $('#btn-contact').append('Enviar mensaje');
 
-                // Set the message text.
-                if (data.responseText !== '') {
-                    $(formMessages).text(data.responseText);
+                // Log detailed error to console for debugging
+                console.error('AJAX error', textStatus, errorThrown, jqXHR);
+
+                // Try to extract a useful message from the response
+                var serverMsg = '';
+                if (jqXHR.responseJSON && jqXHR.responseJSON.message) {
+                    serverMsg = jqXHR.responseJSON.message;
+                } else if (jqXHR.responseText) {
+                    try {
+                        var parsed = JSON.parse(jqXHR.responseText);
+                        if (parsed.message) serverMsg = parsed.message;
+                        else serverMsg = jqXHR.responseText.substring(0, 1000);
+                    } catch (e) {
+                        serverMsg = jqXHR.responseText.substring(0, 1000);
+                    }
                 } else {
-                    $(formMessages).html('Oops! ocurrió un problema.');
+                    serverMsg = 'Oops! ocurrió un problema. (' + textStatus + (errorThrown ? ' - ' + errorThrown : '') + ')';
                 }
+
+                // Show a helpful message in the UI (keep it safe/short)
+                $(formMessages).html(serverMsg + '<br><small>Status: ' + jqXHR.status + ' - ' + textStatus + '</small>');
             });
         }
     });
@@ -212,22 +227,32 @@ $(function () {
 
                 $(formMessages).html(response.message);
             })
-            .fail(function (data) {
+            .fail(function (jqXHR, textStatus, errorThrown) {
                 $('.div-alert').show();
-                // Make sure that the formMessages div has the 'error' class.
-                $(formMessages).removeClass('alert-primary');
-                $(formMessages).addClass('alert-danger');
+                $(formMessages).removeClass('alert-primary').addClass('alert-danger');
 
                 $('#btn-contact_email').text('');
                 $('#btn-contact_email').attr('disabled', false);
                 $('#btn-contact_email').append('Enviar mensaje');
 
-                // Set the message text.
-                if (data.responseText !== '') {
-                    $(formMessages).text(data.responseText);
+                console.error('AJAX error', textStatus, errorThrown, jqXHR);
+
+                var serverMsg = '';
+                if (jqXHR.responseJSON && jqXHR.responseJSON.message) {
+                    serverMsg = jqXHR.responseJSON.message;
+                } else if (jqXHR.responseText) {
+                    try {
+                        var parsed = JSON.parse(jqXHR.responseText);
+                        if (parsed.message) serverMsg = parsed.message;
+                        else serverMsg = jqXHR.responseText.substring(0, 1000);
+                    } catch (e) {
+                        serverMsg = jqXHR.responseText.substring(0, 1000);
+                    }
                 } else {
-                    $(formMessages).html('Oops! ocurrió un problema.');
+                    serverMsg = 'Oops! ocurrió un problema. (' + textStatus + (errorThrown ? ' - ' + errorThrown : '') + ')';
                 }
+
+                $(formMessages).html(serverMsg + '<br><small>Status: ' + jqXHR.status + ' - ' + textStatus + '</small>');
             });
         }
     });

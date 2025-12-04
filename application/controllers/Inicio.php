@@ -357,6 +357,15 @@ class Inicio extends CI_Controller
         $this->email->set_newline("\r\n");
 
         
+        $nu_como = 0;
+        $no_otros_como = '';
+        if ($this->input->post('Nu_Como_Entero_Empresa') !== null) {
+            $nu_como = $this->input->post('Nu_Como_Entero_Empresa');
+        }
+        if ($this->input->post('No_Otros_Como_Entero_Empresa') !== null) {
+            $no_otros_como = $this->input->post('No_Otros_Como_Entero_Empresa');
+        }
+
         $data = array(
             'ID_Empresa' => 1,
             'ID_Organizacion' => 1,
@@ -373,6 +382,8 @@ class Inicio extends CI_Controller
             'Nu_Importacion_Grupal' => $NU_IMPORTACION_GRUPAL,
             'Nu_Curso' => $WEB_CURSO,
             'Nu_Viaje_Negocios' =>$NU_VIAJE_NEGOCIOS,
+            'Nu_Como_Entero_Empresa' => $nu_como,
+            'No_Otros_Como_Entero_Empresa' => $no_otros_como,
         );
 
         if (isset($_POST['cbo-pais']) && !empty($_POST['cbo-pais'])) {
@@ -385,6 +396,7 @@ class Inicio extends CI_Controller
             $response = array(
                 'status' => 'success',
                 'message' => 'Mensaje enviado,pronto te contactaremos.',
+                'message_whastapp' => $message_whastapp,
             );
             echo json_encode($response);
             exit();
@@ -392,6 +404,7 @@ class Inicio extends CI_Controller
             $response = array(
                 'status' => 'error',
                 'message' => 'No se pudo enviar email, inténtelo más tarde.',
+                'message_whastapp' => $message_whastapp,
                 'error_message_mail' => $this->email->print_debugger(),
             );
             echo json_encode($response);

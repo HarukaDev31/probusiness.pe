@@ -1,12 +1,28 @@
 $(document).ready(function () {
-  $('#div-otros_red_social').hide();
-  $('input[type=radio][name=radioRedSocial]').change(function() {
-    $('#div-otros_red_social').hide();
-    if (this.value == '8') {
-      $('#div-otros_red_social').show();
-      //alert('otros');
+  // Robust show/hide for 'Otros' option (value 6)
+  function toggleOtros_red_social() {
+    try {
+      var val = $('input[name="radioRedSocial"]:checked').val();
+      if (val === '6') {
+        $('#div-otros_red_social').show();
+      } else {
+        $('#div-otros_red_social').hide();
+      }
+    } catch (e) {
+      // nothing
     }
-});
+  }
+
+  // Initial run
+  toggleOtros_red_social();
+  // Extra attempts in case DOM/plugins load later
+  setTimeout(toggleOtros_red_social, 50);
+  setTimeout(toggleOtros_red_social, 300);
+
+  // Bind events using delegation to ensure handlers fire even if elements are re-rendered
+  $(document).on('change', 'input[name="radioRedSocial"]', toggleOtros_red_social);
+  // Clicking the label may not trigger change immediately in some browsers; handle clicks too
+  $(document).on('click', 'label[for^="radioRedSocial"]', function () { setTimeout(toggleOtros_red_social, 10); });
 
   const iSetinitialCountry = "pe";
   $("#celular_v2").intlTelInput({
@@ -103,7 +119,7 @@ $(document).ready(function () {
       $('input[name="radioRedSocial"]').focus();
       $('input[name="radioRedSocial"]').closest('.form-group').find('.help-block').html('Elegir Red Social');
       $('input[name="radioRedSocial"]').closest('.form-group').removeClass('text-success').addClass('text-danger');
-    } else if ($('input[name="radioRedSocial"]:checked').val() == 8 &&  $('#otros_red_social').val().length === 0 ) {
+    } else if ($('input[name="radioRedSocial"]:checked').val() == 6 &&  $('#otros_red_social').val().length === 0 ) {
       $('#otros_red_social').focus();
       $('#otros_red_social').closest('.form-group').find('.help-block').html('Ingresar dato');
       $('#otros_red_social').closest('.form-group').removeClass('text-success').addClass('text-danger');

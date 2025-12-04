@@ -49,7 +49,13 @@
     </div>
   </div>
 </div>
-
+<style>
+  .book__image {
+    margin-top: 25px;
+    width: 150.75px;
+    border-radius: 5px;
+  }
+</style>
 <script src="<?php echo base_url("assets/global/jquery.js"); ?>"></script>
 <script src="<?php echo base_url("assets/global/bootstrap.bundle.js"); ?>"></script>
 <script src="<?php echo base_url("assets/global/app.js?ver=36.0.0"); ?>"></script>
@@ -61,9 +67,3 @@
 <script>
   new WOW().init();
 </script>
-<style>
-  .book__image {
-    margin-top: 25px;
-    width: 150.75px;
-    border-radius: 5px;
-  }

@@ -378,15 +378,7 @@
                   </div>
                   <div class="form-check form-check-inline me-1 me-sm-3">
                     <input style="cursor: pointer" class="form-check-input" type="radio" name="radioRedSocial" id="radioRedSocial6" value="6">
-                    <label style="cursor: pointer" class="form-check-label" for="radioRedSocial6">LinkedIn</label>
-                  </div>
-                  <div class="form-check form-check-inline me-1 me-sm-3">
-                    <input style="cursor: pointer" class="form-check-input" type="radio" name="radioRedSocial" id="radioRedSocial7" value="7">
-                    <label style="cursor: pointer" class="form-check-label" for="radioRedSocial7">Google</label>
-                  </div>
-                  <div class="form-check form-check-inline me-1 me-sm-3">
-                    <input style="cursor: pointer" class="form-check-input" type="radio" name="radioRedSocial" id="radioRedSocial8" value="8">
-                    <label style="cursor: pointer" class="form-check-label" for="radioRedSocial8">Otros</label>
+                    <label style="cursor: pointer" class="form-check-label" for="radioRedSocial6">Otros</label>
                   </div>
                 </div>
                 <span class="help-block text-danger" id="error"></span>
@@ -484,6 +476,7 @@
     </div>
   </div>
 </div>
+<!-- moved show/hide logic to assets/js/inicio_curso_registro.js -->
 <!-- fin de planes -->
 
 <!-- testimonios -->
