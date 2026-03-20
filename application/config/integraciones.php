@@ -20,7 +20,7 @@ if ($envFull !== false && $envFull !== '') {
         $config['api_curso_membresia_planes_url'] = rtrim($base, '/') . '/public/curso-membresia/planes';
     } else {
         // Fallback local: Laravel corriendo en localhost:8000 (ajustar en producción)
-        $config['api_curso_membresia_planes_url'] = 'http://127.0.0.1:8000/api/public/curso-membresia/planes';
+        $config['api_curso_membresia_planes_url'] = 'https://intranetback.probusiness.pe/api/public/curso-membresia/planes';
     }
 }
 
