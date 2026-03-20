@@ -126,23 +126,69 @@ src="https://www.facebook.com/tr?id=832734961992647&ev=PageView&noscript=1"
           color: #ffffff !important;
           background-color: #00A09D !important;
         }
-
         .kr-embedded .kr-payment-button:hover {
           color: #ffffff !important;
           background-color: #3DD2CE !important;
         }
-
         .kr-popin-modal-header-background-image{
           background-color: white !important;
         }
-
         .kr-popin-modal-header {
           border: 0 !important;
         }
-
         .kr-popin-open {
           background-color: white !important;
           visibility: visible;
+        }
+        /* Sin transform en el contenedor: si no, position:fixed del popin Izipay queda recortado al formulario */
+        .div-pago_curso {
+          overflow: visible !important;
+          animation: fadeSlideInCurso .45s ease both;
+        }
+        .div-pago_curso .home-div-card,
+        .div-pago_curso .box-plan {
+          overflow: visible !important;
+        }
+        @keyframes fadeSlideInCurso {
+          from { opacity: 0; }
+          to   { opacity: 1; }
+        }
+        /* Ocultar el bloque Krypton (botón Pagar) sin romper el .click() programático */
+        .izipay-kr-hidden-row {
+          height: 0 !important;
+          max-height: 0 !important;
+          overflow: hidden !important;
+          margin: 0 !important;
+          padding: 0 !important;
+        }
+        .izipay-kr-hidden-col {
+          visibility: hidden !important;
+          position: absolute !important;
+          left: -9999px !important;
+          top: 0 !important;
+          width: 1px !important;
+          height: 1px !important;
+          overflow: hidden !important;
+        }
+        /* Fondo detrás del pago: overlay negro */
+        #izipay-loading-overlay {
+          position: fixed !important;
+          inset: 0 !important;
+          z-index: 10000 !important;
+          background: rgba(0, 0, 0, 0.88) !important;
+          align-items: center;
+          justify-content: center;
+          pointer-events: auto;
+        }
+        /* Popin abierto: sin capa oscura encima del checkout (solo velo durante la carga) */
+        #izipay-loading-overlay.izipay-overlay-click-through {
+          opacity: 0 !important;
+          visibility: hidden !important;
+          pointer-events: none !important;
+          transition: opacity 0.35s ease, visibility 0s linear 0.35s;
+        }
+        #izipay-loading-overlay .izipay-loading-panel {
+          pointer-events: none;
         }
       </style>
 

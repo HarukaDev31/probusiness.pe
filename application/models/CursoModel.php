@@ -120,13 +120,21 @@ class CursoModel extends CI_Model{
             $this->db->insert('grupo_usuario', $grupo_usuario);
         }
 
-        //insert venta
+        //insert venta (importe según plan elegido; lo resuelve Curso::crearUsuario en Ss_Total_plan)
+        $ssTotal = 159;
+        if (isset($arrPost['Ss_Total_plan'])) {
+            $v = (int) $arrPost['Ss_Total_plan'];
+            if ($v > 0 && $v <= 9999999) {
+                $ssTotal = $v;
+            }
+        }
+
         $pedido_curso = array(
             'ID_Empresa'                => 1,
             'ID_Organizacion'           => 1,
             'Nu_Estado'                 => 1,
             'Nu_Estado_Usuario_Externo' => 1,
-            'Ss_Total' => 159,
+            'Ss_Total' => $ssTotal,
             'ID_Pais' => $arrPost['cbo-pais'],
             'ID_Entidad' => $ID_Entidad,
             'Fe_Emision' => dateNow('fecha'),

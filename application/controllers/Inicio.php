@@ -157,25 +157,30 @@ class Inicio extends CI_Controller
 
         $client = new Lyra\Client();
 
+        $this->config->load('integraciones', true);
+        $montosPorTipo = $this->_obtenerMontosPlanesCurso();
+        $m1 = isset($montosPorTipo[1]) ? (int) $montosPorTipo[1] : 200;
+        $m2 = isset($montosPorTipo[2]) ? (int) $montosPorTipo[2] : 300;
+        $m3 = isset($montosPorTipo[3]) ? (int) $montosPorTipo[3] : 385;
+
         $store = array(
-            "amount" => 200* 100,
-            //"amount" => 109 * 100,
+            "amount" => $m1 * 100,
             "currency" => "PEN",
             "orderId" => uniqid("id"),
         );
         $response = $client->post("V4/Charge/CreatePayment", $store);
 
         $store = array(
-            "amount" => 300 * 100,
+            "amount" => $m2 * 100,
             "currency" => "PEN",
-            "orderIdv2" => uniqid("id") . '2',
+            "orderId" => uniqid("id") . '2',
         );
         $responsev2 = $client->post("V4/Charge/CreatePayment", $store);
 
         $store = array(
-            "amount" => 385 * 100,
+            "amount" => $m3 * 100,
             "currency" => "PEN",
-            "orderIdv3" => uniqid("id") . '3',
+            "orderId" => uniqid("id") . '3',
         );
         $responsev3 = $client->post("V4/Charge/CreatePayment", $store);
 
@@ -211,6 +216,9 @@ class Inicio extends CI_Controller
             'sMessageWhatsApp' => $sMessageWhatsApp,
         ));
 
+        $sApiCursoMembresiaPlanes = (string) $this->config->item('api_curso_membresia_planes_url', 'integraciones');
+        $sApiUbicacionBase = (string) $this->config->item('api_public_ubicacion_base_url', 'integraciones');
+
         $this->load->view('Web/curso_membresia', array(
             'iNumeroWhatsApp' => $iNumeroWhatsApp,
             'sMessageWhatsApp' => $sMessageWhatsApp,
@@ -218,6 +226,8 @@ class Inicio extends CI_Controller
             'formToken' => $formToken,
             'formTokenv2' => $formTokenv2,
             'formTokenv3' => $formTokenv3,
+            'sApiCursoMembresiaPlanes' => $sApiCursoMembresiaPlanes,
+            'sApiUbicacionBase' => $sApiUbicacionBase,
         ));
     }
 
@@ -500,5 +510,67 @@ class Inicio extends CI_Controller
             echo json_encode($response);
             exit();
         }
+    }
+
+    /**
+     * Obtiene montos PEN por tipo_pago consultando la API pública de planes.
+     * Fallback a integraciones.php si la API no responde o no tiene price_amount.
+     *
+     * @return array [tipo_pago => monto_pen, ...]
+     */
+    private function _obtenerMontosPlanesCurso()
+    {
+        $fallback = $this->config->item('curso_izipay_pen_montos_fallback', 'integraciones');
+        if (!is_array($fallback)) {
+            $fallback = array(1 => 200, 2 => 300, 3 => 385);
+        }
+
+        $apiUrl = $this->config->item('api_curso_membresia_planes_url', 'integraciones');
+        if (empty($apiUrl)) {
+            return $fallback;
+        }
+
+        $ctx = stream_context_create(array(
+            'http' => array(
+                'method' => 'GET',
+                'header' => "Accept: application/json\r\n",
+                'timeout' => 5,
+                'ignore_errors' => true,
+            ),
+            'ssl' => array(
+                'verify_peer' => false,
+                'verify_peer_name' => false,
+            ),
+        ));
+
+        $json = @file_get_contents($apiUrl, false, $ctx);
+        if ($json === false) {
+            log_message('error', 'Inicio::_obtenerMontosPlanesCurso - No se pudo conectar a ' . $apiUrl);
+            return $fallback;
+        }
+
+        $data = json_decode($json, true);
+        if (!is_array($data) || !isset($data['planes']) || !is_array($data['planes'])) {
+            log_message('error', 'Inicio::_obtenerMontosPlanesCurso - Respuesta inesperada de ' . $apiUrl);
+            return $fallback;
+        }
+
+        $montos = array();
+        foreach ($data['planes'] as $plan) {
+            $tp = isset($plan['tipo_pago']) ? (int) $plan['tipo_pago'] : 0;
+            $amt = isset($plan['price_amount']) ? (int) $plan['price_amount'] : 0;
+            if ($tp > 0 && $amt > 0) {
+                $montos[$tp] = $amt;
+            }
+        }
+
+        foreach ($fallback as $tp => $val) {
+            if (!isset($montos[$tp])) {
+                $montos[$tp] = $val;
+                log_message('info', 'Inicio::_obtenerMontosPlanesCurso - tipo_pago=' . $tp . ' sin price_amount, usando fallback=' . $val);
+            }
+        }
+
+        return $montos;
     }
 }

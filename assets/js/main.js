@@ -273,7 +273,7 @@ function checkEmail(email) {
 }
 
 function pagar(iTipoPago){
-    $('.div-pago_curso').show();
+    $('.div-pago_curso').css('display', '').hide().fadeIn(400);
 
     if(iTipoPago==1){
         $('#btn-crear_cuenta').data('tipo_token','formToken');
@@ -285,16 +285,25 @@ function pagar(iTipoPago){
         $('#btn-crear_cuenta').data('tipo_token','formTokenv3');
         $('#btn-crear_cuenta').attr('data-tipo_token', 'formTokenv3');
     }
-    setTimeout(function() {
-        // Ocultar el spinner
-        
-        // Mostrar el contenido del formulario
 
-        
-        // Verificar si el elemento #emailform existe y hacer foco
-        if ($('#btn-crear_cuenta').length) {
-            $('#btn-crear_cuenta').focus();
-        }
-    }, 1000); 
-    
+    var plan = (window.__planesData && window.__planesData[iTipoPago]) || null;
+    if ($('#plan_tipo_pago').length) {
+        $('#plan_tipo_pago').val(iTipoPago);
+    }
+    if ($('#plan_price_amount').length) {
+        $('#plan_price_amount').val(plan && plan.price_amount != null && plan.price_amount !== '' ? plan.price_amount : '');
+    }
+    if (plan) {
+        $('#plan-elegido-nombre').text(plan.title);
+        $('#plan-elegido-precio').text(plan.price_current);
+        $('#plan-elegido-badge').fadeIn(300);
+    } else {
+        $('#plan-elegido-badge').hide();
+    }
+
+    setTimeout(function() {
+        var el = document.querySelector('.div-pago_curso');
+        if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        if ($('#emailform').length) $('#emailform').focus();
+    }, 500);
 }

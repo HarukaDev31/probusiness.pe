@@ -209,8 +209,84 @@ class Curso extends CI_Controller {
 			exit();
 		}
 
-		echo json_encode($this->CursoModel->crearUsuario($this->input->post()));
+		$this->load->config('integraciones', true);
+		$post = $this->input->post();
+		$montos = $this->_obtenerMontosPlanesCurso();
+		$tp = isset($post['plan_tipo_pago']) ? (int) $post['plan_tipo_pago'] : 1;
+		if ($tp < 1) {
+			$tp = 1;
+		}
+		$ssTotal = isset($montos[$tp]) ? (int) $montos[$tp] : 159;
+		if (isset($post['plan_price_amount']) && (int) $post['plan_price_amount'] > 0) {
+			$clientAmt = (int) $post['plan_price_amount'];
+			if ($clientAmt !== $ssTotal) {
+				log_message('notice', 'Curso::crearUsuario plan_price_amount cliente=' . $clientAmt . ' servidor=' . $ssTotal . ' tipo_pago=' . $tp);
+			}
+		}
+		$post['Ss_Total_plan'] = $ssTotal;
+
+		echo json_encode($this->CursoModel->crearUsuario($post));
 		exit();
+	}
+
+	/**
+	 * Mismos montos que Izipay (API pública planes + fallback integraciones).
+	 *
+	 * @return array [tipo_pago => monto_pen, ...]
+	 */
+	private function _obtenerMontosPlanesCurso()
+	{
+		$fallback = $this->config->item('curso_izipay_pen_montos_fallback', 'integraciones');
+		if (!is_array($fallback)) {
+			$fallback = array(1 => 200, 2 => 300, 3 => 385);
+		}
+
+		$apiUrl = $this->config->item('api_curso_membresia_planes_url', 'integraciones');
+		if (empty($apiUrl)) {
+			return $fallback;
+		}
+
+		$ctx = stream_context_create(array(
+			'http' => array(
+				'method' => 'GET',
+				'header' => "Accept: application/json\r\n",
+				'timeout' => 5,
+				'ignore_errors' => true,
+			),
+			'ssl' => array(
+				'verify_peer' => false,
+				'verify_peer_name' => false,
+			),
+		));
+
+		$json = @file_get_contents($apiUrl, false, $ctx);
+		if ($json === false) {
+			log_message('error', 'Curso::_obtenerMontosPlanesCurso - No se pudo conectar a ' . $apiUrl);
+			return $fallback;
+		}
+
+		$data = json_decode($json, true);
+		if (!is_array($data) || !isset($data['planes']) || !is_array($data['planes'])) {
+			log_message('error', 'Curso::_obtenerMontosPlanesCurso - Respuesta inesperada de ' . $apiUrl);
+			return $fallback;
+		}
+
+		$montos = array();
+		foreach ($data['planes'] as $plan) {
+			$tp = isset($plan['tipo_pago']) ? (int) $plan['tipo_pago'] : 0;
+			$amt = isset($plan['price_amount']) ? (int) $plan['price_amount'] : 0;
+			if ($tp > 0 && $amt > 0) {
+				$montos[$tp] = $amt;
+			}
+		}
+
+		foreach ($fallback as $tp => $val) {
+			if (!isset($montos[$tp])) {
+				$montos[$tp] = $val;
+			}
+		}
+
+		return $montos;
 	}
 	
 	public function respuestaIzipay(){

@@ -32,232 +32,25 @@
         negocio al siguiente nivel
       </p>
     </div>
-    <div class="py-5 d-flex justify-content-center flex-wrap">
-      <div class="col-md-4 col-12 px-2 mb-3">
-        <div class="bg-light c-plam col-12">
-          <div class="d-flex justify-content-between">
-            <span class="t-plam t-2 fs-4 text-dark fw-bold">
-              Plan Emprendedor
-            </span>
-            <!-- <span class="t-plam t-1-1">Anual</span> -->
-          </div>
-          <span class="t-plam t-1 text-dark">Clase grabada</span>
-          <div class="m1 t-3 d-flex">
-            <!-- <span class="text-decoration-line-through text-secondary fs-6 my-auto"
-              >S/ 200</span
-            > -->
-            <span class="t-plam ms-2 my-auto ">S/ 200</span>
-          </div>
-          <!-- <span class="t-plam">Cobro anual recurrente de S/799</span> -->
-          <span class="t-plam fs-6 fw-bold text-dark">Beneficios</span>
-          <div class="d-flex flex-column">
-            <span class="t-plaml"
-              ><i class="bi bi-check2 plami"></i> Aula virtual por 1 año.</span
-            >
-            <span class="t-plaml"
-              ><i class="bi bi-check2 plami"></i> Herramientas de Trabajo.</span
-            >
-            <span class="t-plaml"
-              ><i class="bi bi-check2 plami"></i> Ayuda Importadora por 3
-              meses.</span
-            >
-            <span class="t-plaml"
-              ><i class="bi bi-check2 plami"></i> Lista de contactos.</span
-            >
-            <span class="t-plaml"
-              ><i class="bi bi-check2 plami"></i> Lista de Proveedores.</span
-            >
-            <span class="t-plaml"
-              ><i class="bi bi-check2 plami"></i> Manual de Importaciones.</span
-            >
-            <span class="t-plaml"
-              ><i class="bi bi-check2 plami"></i> Alianza Casillero en
-              China.</span
-            >
-            <span class="t-plaml"
-              ><i class="bi bi-check2 plami"></i> Alianza Casillero en USA.</span
-            >
-            <span class="t-plaml"
-              ><i class="bi bi-check2 plami"></i> Boletín informativo por 1
-              año.</span
-            >
-            <!-- <div class="t-plaml">
-							<div style="border: solid #0ae98a !important;" class="col-md-12 px-2 py-2">
-                LA OFERTA EXPIRA EN <br>
-                <div class="countdown countdown my-1 mb-0"><strong>59 minutos y </strong><strong>59 segundos</strong></div>
-              </div>
-         
-
-                <div class="countdown">
-                  <ul>
-                    <li><span id="days">1</span>days</li>
-                    <li><span id="hours">1</span>Hours</li>
-                    <li><span id="minute">1</span>Hours</li>
-                    <li><span id="second">1</span>Hours</li>
-                  </ul>
-                </div>
-
-           
-						</div> -->
-          </div>
-          <!-- <div class="d-flex align-items-center plaman">
-                    <i class="bi bi-clock plami"></i>
-                    <span class="t-plam">Paga a 4 cuotas sin intereses de S/200 con tarjeta débito o crédito.</span>
-                  </div> -->
-          <button
-            type="button"
-            onclick="pagar(1);"
-            class="border-0 py-3 text-center d-block fw-bold hover-naranja text-decoration-none small2 bg-dark text-white w-100 mt-3 rounded-3"
-          >
-            Ir a pagar
-          </button>
-        </div>
-      </div>
-      <div class="col-md-4 col-12 px-2 mb-3 d-none">
-        <div class="bg-light c-plam shadow-sm col-12 borde-naranja">
-          <div class="d-flex justify-content-between">
-            <span class="t-plam t-2 fs-4 text-dark fw-bold"> Plan Empresarial</span>
-            <!-- <span class="t-plam t-1-1">Anual</span> -->
-          </div>
-          <span class="t-plam t-1 text-dark">Clase en Vivo (4 días en Zoom)</span>
-          <div class="m1 t-3 d-flex">
-            <span class="text-decoration-line-through text-secondary fs-6 my-auto"
-              >S/ 550</span
-            >
-            <span class="t-plam ms-2 my-auto">S/ 385</span>
-          </div>
-          <!-- <span class="t-plam">Cobro anual recurrente de S/799</span> -->
-          <span class="t-plam fs-6 fw-bold text-dark">Beneficios</span>
-          <div class="d-flex flex-column">
-            <span class="t-plaml"
-              ><i class="bi bi-check2 plami"></i> Asesoría en tu tienda
-              virtual.</span
-            >
-            <span class="t-plaml"
-              ><i class="bi bi-check2 plami"></i> Aula virtual por 1 año.</span
-            >
-            <span class="t-plaml"
-              ><i class="bi bi-check2 plami"></i> Herramientas de Trabajo.</span
-            >
-            <span class="t-plaml"
-              ><i class="bi bi-check2 plami"></i> Ayuda Importadora por 3
-              meses.</span
-            >
-            <span class="t-plaml"
-              ><i class="bi bi-check2 plami"></i> Lista de contactos.</span
-            >
-            <span class="t-plaml"
-              ><i class="bi bi-check2 plami"></i> Lista de Proveedores.</span
-            >
-            <span class="t-plaml"
-              ><i class="bi bi-check2 plami"></i> Manual de Importaciones.</span
-            >
-            <span class="t-plaml"
-              ><i class="bi bi-check2 plami"></i> Alianza Casillero en
-              China.</span
-            >
-            <span class="t-plaml"
-              ><i class="bi bi-check2 plami"></i> Alianza Casillero en USA.</span
-            >
-            <span class="t-plaml"
-              ><i class="bi bi-check2 plami"></i> Boletín informativo por 1
-              año.</span
-            >
-            <span class="t-plaml"
-              ><i class="bi bi-check2 plami"></i> Importación grupal.</span
-            >
-            
-            <!-- <div class="t-plaml">
-							<div style="border: solid #0ae98a !important;" class="col-md-12 px-2 py-2">
-                LA OFERTA EXPIRA EN <br>
-                <div class="countdown countdown my-1 mb-0"><strong>59 minutos y </strong><strong>59 segundos</strong></div>
-              </div>
-						</div> -->
-          </div>
-          <!-- <div class="d-flex align-items-center plaman">
-                    <i class="bi bi-clock plami"></i>
-                    <span class="t-plam">Paga a 4 cuotas sin intereses de S/200 con tarjeta débito o crédito.</span>
-                  </div> -->
-          <button
-            type="button"
-            onclick="pagar(2);"
-            class="border-0 py-3 text-center d-block fw-bold hover-naranja text-decoration-none small2 bg-morado text-white w-100 mt-3 rounded-3"
-          >
-            Ir a pagar
-          </button>
-        </div>
-      </div>
-      <div class="col-md-4 col-12 px-2 mb-3">
-        <div class="bg-light c-plam col-12">
-          <div class="d-flex justify-content-between">
-            <span class="t-plam t-2 fs-4 text-dark fw-bold">
-              Plan Pro Business
-            </span>
-            <!-- <span class="t-plam t-1-1">Anual</span> -->
-          </div>
-          <span class="t-plam t-1 text-dark">Clase en Vivo (4 días en Zoom)</span>
-          <div class="m1 t-3 d-flex">
-            <span class="text-decoration-line-through text-secondary fs-6 my-auto"
-              >S/ 550</span
-            >
-            <span class="t-plam ms-2 my-auto">S/ 385</span>
-          </div>
-          <!-- <span class="t-plam">Cobro anual recurrente de S/799</span> -->
-          <span class="t-plam fs-6 fw-bold text-dark">Beneficios</span>
-          <div class="d-flex flex-column">
-            <span class="t-plaml"><i class="bi bi-check2 plami"></i> Asesoría en tu Tienda Virtual.</span>
-            <span class="t-plaml"><i class="bi bi-check2 plami"></i> Aula virtual por 1 año.</span>
-            <span class="t-plaml"
-              ><i class="bi bi-check2 plami"></i> Herramientas de Trabajo.</span
-            >
-            <span class="t-plaml"
-              ><i class="bi bi-check2 plami"></i> Ayuda Importadora por 3
-              meses.</span
-            >
-            <span class="t-plaml"
-              ><i class="bi bi-check2 plami"></i> Lista de contactos.</span
-            >
-            <span class="t-plaml"
-              ><i class="bi bi-check2 plami"></i> Lista de Proveedores.</span
-            >
-            <span class="t-plaml"
-              ><i class="bi bi-check2 plami"></i> Manual de Importaciones.</span
-            >
-            <span class="t-plaml"
-              ><i class="bi bi-check2 plami"></i> Alianza Casillero en
-              China.</span
-            >
-            <span class="t-plaml"
-              ><i class="bi bi-check2 plami"></i> Alianza Casillero en USA.</span
-            >
-            <!-- <span class="t-plaml"><i class="bi bi-check2 plami"></i> Boletín informativo por 1 año.</span> -->
-            <span class="t-plaml"><i class="bi bi-check2 plami"></i> Acceso de productos novedosos mensuales.</span>
-            <span class="t-plaml"><i class="bi bi-check2 plami"></i> Tarifas preferenciales en todos nuestros servicios.</span>
-            <span class="t-plaml"><i class="bi bi-check2 plami"></i> Asesoramiento en tu viaje a China.</span>
-            
-            
-            <!-- <div class="t-plaml">
-							<div style="border: solid #0ae98a !important;" class="col-md-12 px-2 py-2">
-                LA OFERTA EXPIRA EN <br>
-                <div class="countdown countdown my-1 mb-0"><strong>59 minutos y </strong><strong>59 segundos</strong></div>
-              </div>
-						</div> -->
-          </div>
-          <button
-            type="button"
-            onclick="pagar(3);"
-            class="border-0 py-3 text-center d-block fw-bold hover-naranja text-decoration-none small2 bg-dark text-white w-100 mt-3 rounded-3"
-          >
-            Ir a pagar
-          </button>
-        </div>
+    <?php
+      $sApiPlanes = isset($sApiCursoMembresiaPlanes) ? $sApiCursoMembresiaPlanes : '';
+    ?>
+    <div class="py-5 d-flex justify-content-center flex-wrap"
+         id="planes-membresia-root"
+         data-planes-api-url="<?php echo htmlspecialchars($sApiPlanes, ENT_QUOTES, 'UTF-8'); ?>">
+      <div class="col-12 text-center py-4">
+        <div class="spinner-border text-secondary" role="status"><span class="visually-hidden">Cargando planes...</span></div>
       </div>
     </div>
   </div>
   <!-- Fin -->
-  <div class="container mt-5 bg-white div-pago_curso">
+  <div class="container mt-5 bg-white div-pago_curso" style="display:none;">
     <div class="row justify-content-center">
       <div class="col-md-12 home-div-card box-plan p-5">
+        <div id="plan-elegido-badge" class="text-center mb-3" style="display:none;">
+          <span class="badge bg-dark fs-6 px-4 py-2" id="plan-elegido-nombre"></span>
+          <span class="badge bg-success fs-5 px-4 py-2 ms-2" id="plan-elegido-precio"></span>
+        </div>
         <?php
         $attributes = array('id' => 'form-registro');
         echo form_open('', $attributes);
@@ -441,32 +234,26 @@
             </div>
           </div>
 
+          <input type="hidden" name="plan_tipo_pago" id="plan_tipo_pago" value="1">
+          <input type="hidden" name="plan_price_amount" id="plan_price_amount" value="">
           <div class="col-12 col-sm-12 col-md-12 col-lg-12 mb-3">
-            <button type="submit" id="btn-crear_cuenta" data-tipo_token="0" class="btn btn-dark btn-lg btn-verificar w-100">Finalizar compra</button>
+            <button type="submit" id="btn-crear_cuenta" data-tipo_token="formToken" class="btn btn-dark btn-lg btn-verificar w-100">Finalizar compra</button>
           </div>
           <?php //array_debug($arrResponsePay); ?>
           <input type="hidden" id="formToken" value="<?php echo $formToken; ?>">
           <input type="hidden" id="formTokenv2" value="<?php echo $formTokenv2; ?>">
           <input type="hidden" id="formTokenv3" value="<?php echo $formTokenv3; ?>">
-          <div class="row mb-0" style="height: 0px !important;">
-            <div class="col-12 col-sm-12 col-md-12 col-lg-12 mb-0" style="visibility: hidden;">
-              <!-- payment form -->
+          <div class="row mb-0 izipay-kr-hidden-row">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12 mb-0 izipay-kr-hidden-col">
               <div class="kr-embedded" kr-popin kr-form-token="<?php echo $formToken;?>">
-                <!-- custom hidden field -->
                 <input type="hidden" id="id_pedido_curso" name="acme-id" value=""/>
                 <input type="hidden" id="hidden_email" name="acme-email" value=""/>
                 <input type="hidden" id="hidden_password" name="acme-password" value=""/>
                 <input type="hidden" id="hidden_name" name="acme-name" value=""/>
-
-                <!-- payment form fields -->
                 <div class="kr-pan"></div>
                 <div class="kr-expiry"></div>
                 <div class="kr-security-code"></div>
-
-                <!-- payment form submit button -->
-                <button class="kr-payment-button">Pagar</button>
-
-                <!-- error zone -->
+                <button class="kr-payment-button" type="button">Pagar</button>
                 <div class="kr-form-error"></div>
               </div>
             </div>
@@ -476,7 +263,14 @@
     </div>
   </div>
 </div>
-<!-- moved show/hide logic to assets/js/inicio_curso_registro.js -->
+<!-- Overlay negro: visible mientras carga y mientras el iframe/modal de Izipay está abierto -->
+<div id="izipay-loading-overlay" class="izipay-loading-overlay-root" style="display:none;" aria-hidden="true">
+  <div class="izipay-loading-panel text-center text-white px-3">
+    <div class="spinner-border text-light mb-3" style="width:3rem;height:3rem;" role="status"></div>
+    <p class="fw-bold fs-5 mb-1">Abriendo formulario de pago...</p>
+    <p class="mb-0 fs-6" id="izipay-loading-monto"></p>
+  </div>
+</div>
 <!-- fin de planes -->
 
 <!-- testimonios -->
