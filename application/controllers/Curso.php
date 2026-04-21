@@ -308,7 +308,7 @@ class Curso extends CI_Controller {
 				'message' => 'invalid signature'
 			);
 			$this->load->view('Web/header');
-			$iNumeroWhatsApp = '51992583703';//stephany
+			$iNumeroWhatsApp = '51941874649';//stephany
 			$sMessageWhatsApp = 'Hola+ProBusiness+compre+el+curso';//stephany
 			$this->load->view('Web/layout/menu', array(
 				'iNumeroWhatsApp' => $iNumeroWhatsApp
@@ -379,7 +379,7 @@ class Curso extends CI_Controller {
 							'message' => 'Gracias por tu compra <br> Nro. ' . $id_pedido_curso . ' pero se asigno curso'
 						);
 						$this->load->view('Web/header');
-						$iNumeroWhatsApp = '51992583703';//stephany
+						$iNumeroWhatsApp = '51941874649';//stephany
 						$sMessageWhatsApp = 'Hola+ProBusiness+compre+el+curso';//stephany
 						$this->load->view('Web/layout/menu', array(
 							'iNumeroWhatsApp' => $iNumeroWhatsApp
@@ -403,7 +403,7 @@ class Curso extends CI_Controller {
 						'message' => 'Gracias por tu compra <br> Nro. ' . $id_pedido_curso . ' pero se encontro usuario para curso'
 				  	);
 					  $this->load->view('Web/header');
-					  $iNumeroWhatsApp = '51992583703';//stephany
+					  $iNumeroWhatsApp = '51941874649';//stephany
 					  $sMessageWhatsApp = 'Hola+ProBusiness+compre+el+curso';//stephany
 					  $this->load->view('Web/layout/menu', array(
 						  'iNumeroWhatsApp' => $iNumeroWhatsApp
@@ -428,7 +428,7 @@ class Curso extends CI_Controller {
 					'message' => 'Gracias por tu compra <br> Nro. ' . $id_pedido_curso . ' pero no se creo usuario moodle'
 				);
 				$this->load->view('Web/header');
-				$iNumeroWhatsApp = '51992583703';//stephany
+				$iNumeroWhatsApp = '51941874649';//stephany
 				$sMessageWhatsApp = 'Hola+ProBusiness+compre+el+curso';//stephany
 				$this->load->view('Web/layout/menu', array(
 					'iNumeroWhatsApp' => $iNumeroWhatsApp
@@ -471,7 +471,7 @@ class Curso extends CI_Controller {
 					'message' => 'Gracias por tu compra <br> Nro. ' . $id_pedido_curso . ' pero no se envio email'
 				);
 				$this->load->view('Web/header');
-				$iNumeroWhatsApp = '51992583703';//stephany
+				$iNumeroWhatsApp = '51941874649';//stephany
 				$sMessageWhatsApp = 'Hola+ProBusiness+compre+el+curso';//stephany
 				$this->load->view('Web/layout/menu', array(
 					'iNumeroWhatsApp' => $iNumeroWhatsApp
@@ -506,7 +506,7 @@ class Curso extends CI_Controller {
 		}
 
 		$this->load->view('Web/header');
-		$iNumeroWhatsApp = '51992583703';//stephany
+		$iNumeroWhatsApp = '51941874649';//stephany
 		$sMessageWhatsApp = 'Hola+ProBusiness+compre+el+curso';//stephany
 		$this->load->view('Web/layout/menu', array(
 			'iNumeroWhatsApp' => $iNumeroWhatsApp
