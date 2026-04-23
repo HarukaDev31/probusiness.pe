@@ -347,6 +347,40 @@ class Inicio extends CI_Controller
 			$NU_VIAJE_NEGOCIOS = 1;
 		}
 
+        $sServicioSeleccionado = (string) $this->input->post('select');
+        if (in_array($sServicioSeleccionado, array('web_curso', 'Nu_Carga_Consolidada'), true)) {
+            $arrBackendResponse = $this->_enviarLeadLandingBackend(
+                $sServicioSeleccionado,
+                array(
+                    'nombre' => $name,
+                    'celular' => $celular,
+                    'email' => $email,
+                )
+            );
+
+            if (!isset($arrBackendResponse['status']) || $arrBackendResponse['status'] !== 'success') {
+                $response = array(
+                    'status' => 'error',
+                    'message' => isset($arrBackendResponse['message'])
+                        ? $arrBackendResponse['message']
+                        : 'No se pudo registrar el lead en backend.',
+                    'message_whastapp' => $message_whastapp,
+                );
+                echo json_encode($response);
+                exit();
+            }
+
+            $response = array(
+                'status' => 'success',
+                'message' => isset($arrBackendResponse['message']) && !empty($arrBackendResponse['message'])
+                    ? $arrBackendResponse['message']
+                    : 'Mensaje enviado, pronto te contactaremos.',
+                'message_whastapp' => $message_whastapp,
+            );
+            echo json_encode($response);
+            exit();
+        }
+
         // $message .= $this->input->post('message');
 
         // enviar correo con las credenciales
@@ -510,6 +544,153 @@ class Inicio extends CI_Controller
             echo json_encode($response);
             exit();
         }
+    }
+
+    /**
+     * Envía lead de landing al backend Laravel para guardado y sync Bitrix.
+     *
+     * @param string $sServicioSeleccionado
+     * @param array  $arrLeadData
+     * @return array
+     */
+    private function _enviarLeadLandingBackend($sServicioSeleccionado, array $arrLeadData)
+    {
+        $sApiBase = getenv('LANDING_API_BASE_URL');
+        if ($sApiBase === false || $sApiBase === '') {
+            $sApiBase = getenv('LARAVEL_API_BASE_URL');
+        }
+
+        if ($sApiBase === false || $sApiBase === '') {
+            return array(
+                'status' => 'error',
+                'message' => 'Configurar LANDING_API_BASE_URL o LARAVEL_API_BASE_URL.',
+            );
+        }
+
+        $sApiBase = rtrim((string) $sApiBase, '/');
+        $sCodigoCampana = $this->_obtenerCodigoCampanaLanding();
+
+        $sEndpoint = '';
+        $sToken = '';
+        $arrPayload = array(
+            'nombre' => $arrLeadData['nombre'],
+            'whatsapp' => $arrLeadData['celular'],
+            'codigo_campana' => $sCodigoCampana,
+        );
+
+        if ($sServicioSeleccionado === 'web_curso') {
+            $sEndpoint = '/public/landing-curso/leads';
+            $sToken = (string) getenv('LANDING_CURSO_FORM_TOKEN');
+            $arrPayload['email'] = $arrLeadData['email'];
+            $arrPayload['experiencia_importando'] = 'poca';
+        } elseif ($sServicioSeleccionado === 'Nu_Carga_Consolidada') {
+            $sEndpoint = '/public/landing-consolidado/leads';
+            $sToken = (string) getenv('LANDING_CONSOLIDADO_FORM_TOKEN');
+            $arrPayload['proveedor'] = 'buscando';
+        } else {
+            return array(
+                'status' => 'error',
+                'message' => 'Servicio no soportado para registro de landing.',
+            );
+        }
+
+        if (empty($sToken)) {
+            return array(
+                'status' => 'error',
+                'message' => 'Token de formulario no configurado para el servicio seleccionado.',
+            );
+        }
+
+        $sUrl = $sApiBase . $sEndpoint;
+        $sPayloadJson = json_encode($arrPayload);
+        if ($sPayloadJson === false) {
+            return array(
+                'status' => 'error',
+                'message' => 'No se pudo serializar la data del lead.',
+            );
+        }
+
+        $arrContext = array(
+            'http' => array(
+                'method' => 'POST',
+                'header' =>
+                    "Content-Type: application/json\r\n" .
+                    "Accept: application/json\r\n" .
+                    "Authorization: Bearer {$sToken}\r\n",
+                'content' => $sPayloadJson,
+                'timeout' => 12,
+                'ignore_errors' => true,
+            ),
+            'ssl' => array(
+                'verify_peer' => false,
+                'verify_peer_name' => false,
+            ),
+        );
+
+        $sRaw = @file_get_contents($sUrl, false, stream_context_create($arrContext));
+        $iHttpCode = 0;
+        if (isset($http_response_header[0]) && preg_match('#HTTP/\S+\s+(\d+)#', $http_response_header[0], $arrMatches)) {
+            $iHttpCode = (int) $arrMatches[1];
+        }
+
+        $arrBody = array();
+        if ($sRaw !== false && $sRaw !== '') {
+            $arrDecoded = json_decode($sRaw, true);
+            if (is_array($arrDecoded)) {
+                $arrBody = $arrDecoded;
+            }
+        }
+
+        if ($iHttpCode >= 200 && $iHttpCode < 300) {
+            return array(
+                'status' => 'success',
+                'message' => isset($arrBody['message']) ? $arrBody['message'] : 'Lead registrado correctamente.',
+            );
+        }
+
+        $sErrorMessage = 'No se pudo registrar el lead en backend.';
+        if (isset($arrBody['message']) && !empty($arrBody['message'])) {
+            $sErrorMessage = $arrBody['message'];
+        } elseif ($iHttpCode > 0) {
+            $sErrorMessage .= ' (HTTP ' . $iHttpCode . ')';
+        }
+
+        return array(
+            'status' => 'error',
+            'message' => $sErrorMessage,
+        );
+    }
+
+    /**
+     * Formato de campaña: mes(español)+año(yyyy), ej: abril2026.
+     *
+     * @return string
+     */
+    private function _obtenerCodigoCampanaLanding()
+    {
+        $arrMeses = array(
+            1 => 'enero',
+            2 => 'febrero',
+            3 => 'marzo',
+            4 => 'abril',
+            5 => 'mayo',
+            6 => 'junio',
+            7 => 'julio',
+            8 => 'agosto',
+            9 => 'septiembre',
+            10 => 'octubre',
+            11 => 'noviembre',
+            12 => 'diciembre',
+        );
+
+        $iMes = (int) date('n');
+        $sAnio = date('Y');
+
+        if (!isset($arrMeses[$iMes])) {
+            return 'campana' . $sAnio;
+        }
+
+        return $arrMeses[$iMes] . $sAnio;
     }
 
     /**

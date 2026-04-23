@@ -428,11 +428,8 @@
                   <div class="form-group mb-5 col-md-12 col-lg-12 mb-md-4">
                     <select class="form-select text-dark small border-input rounded-0 py-2" id="select-servicios" name="select">
                       <option value="" disabled selected>¿En qué servicio te encuentras interesado?</option>
-                      <option value="Nu_Agente_Compra" >Agente de compra</option>
                       <option value="web_curso">Curso de importación</option>
                       <option value="Nu_Carga_Consolidada">Carga consolidada</option>
-                      <option value="Nu_Importacion_Grupal">Importación grupal</option>
-                      <option value="Nu_Viaje_Negocios">Viaje de China</option>
                     </select>
                     <span class="help-block text-danger" id="error"></span>
                   </div>
