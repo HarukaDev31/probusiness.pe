@@ -91,6 +91,45 @@ switch (ENVIRONMENT)
 
 /*
  *---------------------------------------------------------------
+ * Carga de .env (clave=valor)
+ *---------------------------------------------------------------
+ * PHP/Apache no leen .env por sí solos; sin esto, getenv() en config/controladores
+ * no ve las variables aunque exista el archivo en la raíz del proyecto.
+ */
+$envPath = __DIR__ . DIRECTORY_SEPARATOR . '.env';
+if (is_file($envPath) && is_readable($envPath)) {
+	$envLines = file($envPath, FILE_IGNORE_NEW_LINES);
+	if (is_array($envLines)) {
+		foreach ($envLines as $envLine) {
+			$envLine = trim($envLine);
+			if ($envLine === '' || (isset($envLine[0]) && $envLine[0] === '#')) {
+				continue;
+			}
+			if (strpos($envLine, '=') === false) {
+				continue;
+			}
+			list($envName, $envValue) = explode('=', $envLine, 2);
+			$envName = trim($envName);
+			$envValue = trim($envValue);
+			if ($envName === '') {
+				continue;
+			}
+			if ($envValue !== '' && strlen($envValue) >= 2) {
+				$first = $envValue[0];
+				$last = $envValue[strlen($envValue) - 1];
+				if (($first === '"' && $last === '"') || ($first === "'" && $last === "'")) {
+					$envValue = substr($envValue, 1, -1);
+				}
+			}
+			putenv($envName . '=' . $envValue);
+			$_ENV[$envName] = $envValue;
+			$_SERVER[$envName] = $envValue;
+		}
+	}
+}
+
+/*
+ *---------------------------------------------------------------
  * SYSTEM DIRECTORY NAME
  *---------------------------------------------------------------
  *
