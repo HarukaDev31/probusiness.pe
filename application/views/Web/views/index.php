@@ -6,7 +6,7 @@
             <h1 class="text-big text-dark fw-semibold mt-4 mt-md-0 wow fadeInUp" data-wow-duration=".5s" data-wow-delay=".2s">Uniendo mercados</h1>
             <p class="mb-3 wow fadeInUp" data-wow-duration=".5s" data-wow-delay=".4s">Encuentra la clave para expandir tu negocio con nuestras opciones de importación.</p>
             <br>
-            <a href="#"  class="text-white small d-md-auto text-center d-block col-md-8 col-lg-6 hover-naranja col-7 bg-black  text-decoration-none py-3 rounded-3 px-4 wow fadeInUp" data-wow-duration=".5s" data-wow-delay=".6s">Conocer más </a>
+            <a href="<?php echo base_url("nosotros"); ?>"  class="text-white small d-md-auto text-center d-block col-md-8 col-lg-6 hover-naranja col-7 bg-black  text-decoration-none py-3 rounded-3 px-4 wow fadeInUp" data-wow-duration=".5s" data-wow-delay=".6s">Conocer más </a>
           </div>
       </div>
       <div class="col-md-7 ps-md-5">

@@ -63,7 +63,7 @@
 <div class="wsp-flota">
   <?php
   if(!isset($sMessageWhatsApp))
-    $sMessageWhatsApp='¡Hola&nbsp;ProBusiness!&nbsp;deseo&nbsp;comunicarme&nbsp;con&nbsp;algún&nbsp;representante.';
+    $sMessageWhatsApp='¡Hola ProBusiness! Vengo de la página web deseo comunicarme con algún representante.';
   ?>
   <a target="_blank" rel="noopener noreferrer" href="https://api.whatsapp.com/send?phone=<?php echo $iNumeroWhatsApp; ?>&text=<?php echo $sMessageWhatsApp; ?>"><img src="<?php echo base_url("assets/img/home/wsp.svg"); ?>" alt="WhastApp ProBusiness" class="img-fluid" style="height: 60px;"/></a>
 </div>

@@ -105,12 +105,6 @@ $(function () {
                 // Clear the form.
                 if (response.status == 'success') {
                     //$('#contact-form input, #contact-form email, #contact-form tel,#contact-form textarea').val('');
-
-                    url = 'https://wa.me/' + $('#web_whatsapp').val() + '?text=';
-                    url += response.message_whastapp;
-
-                    url = encodeURI(url);
-                    window.open(url, '_blank');
                 }
             })
             .fail(function (jqXHR, textStatus, errorThrown) {
