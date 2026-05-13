@@ -143,22 +143,7 @@
          </div>
       </div>
        <div class="collaborator my-4 my-md-5 wow fadeInUp" data-wow-duration=".5s" data-wow-delay=".2s">
-          <div class="ps-3">
-              <div class="d-flex h-100 p-0 box-benefits bg-white flex-column flex-md-row justify-content-md-center ">
-                  <div class="col-md-5 position-relative">
-                    <img src="<?php echo base_url("assets/img/home/agente_compra_home.png"); ?>" class="w-100" alt="ProBusiness Agente de Compra">
-                    <div class="gr-image-agente position-absolute w-100 top-0 h-100"></div>
-                  </div>
-                  <div class="mt-md-5 mt-4 mb-4 mb-md-0 px-4 px-md-5">
-                    <h5 class=" fs-5 text-center text-md-start ">Agente de compra</h5>
-                    <p class="small2 text-center text-md-start text-dark3 mt-2 ">Buscamos proveedores, gestionamos la adquisición de productos demandados por clientes en China y nos aseguramos de cumplir con las especificaciones solicitadas.</p>
-                    <a href="<?php echo base_url("agente_compra"); ?>" class="border justify-content-center border-black d-flex btn-beneficio text-center d-md-auto small2 col-md-10 text-dark text-decoration-none rounded-3 py-2 px-4">
-                      <p class="my-auto">Más información</p>
-                      <i class="bi bi-arrow-right fs-6 ms-3 text-dark"></i>
-                    </a>
-                  </div>
-              </div>
-          </div>
+          
           <div class="ps-3">
               <div class="d-flex h-100 p-0 box-benefits bg-white flex-column flex-md-row justify-content-md-center">
                   <div class="col-md-5 position-relative">
@@ -191,38 +176,7 @@
               </div>
             </div>
           </div>
-          <div class="ps-3">
-              <div class="d-flex h-100 p-0 box-benefits bg-white flex-column flex-md-row justify-content-md-center ">
-                  <div class="col-md-5 position-relative">
-                    <img src="<?php echo base_url("assets/img/home/importacion_grupal_home.png"); ?>" class="w-100" alt="ProBusiness Importación Grupal">
-                    <div class="gr-image-curso position-absolute w-100 top-0 h-100"></div>
-                  </div>
-                  <div class="mt-md-5 mt-4 mb-4 mb-md-0 px-4 px-md-5">
-                    <h5 class="fs-5 text-center text-md-start ">Importación Grupal</h5>
-                    <p class="small2 text-center text-md-start text-dark3 mt-2 ">Te brindamos una variedad de productos novedosos y en tendencia en el cual varios emprendedores unen capital para realizar una misma importación grupal.</p>
-                    <a href="<?php echo base_url("importacion_grupal"); ?>" class="border justify-content-center border-black d-flex btn-beneficio text-center d-md-auto small2 col-md-10 text-dark text-decoration-none rounded-3 py-2 px-4">
-                      <p class="my-auto">Más información</p>
-                      <i class="bi bi-arrow-right fs-6 ms-3 text-dark"></i>
-                    </a>
-                  </div>
-              </div>
-          </div>
-          <div class="ps-3">
-            <div class="d-flex h-100 p-0 box-benefits bg-white flex-column flex-md-row justify-content-md-center">
-              <div class="col-md-5 position-relative">
-                <img src="<?php echo base_url("assets/img/home/agente_viajes_home.png"); ?>" class="w-100" alt="ProBusiness Viaje a China">
-                <div class="gr-image-agente position-absolute w-100 top-0 h-100"></div>
-              </div>
-              <div class="mt-md-5 mt-4 mb-4 mb-md-0 px-4 px-md-5">
-                <h5 class=" fs-5 text-center text-md-start ">Viaje a China</h5>
-                <p class="small2 text-center text-md-start text-dark3 mt-2 ">Ofrecemos un paquete integral que cubre todos los aspectos de su Viaje a China a China. Desde la organización de reuniones con proveedores locales hasta la logística del viaje.</p>
-                <a href="<?php echo base_url("viaje_negocios"); ?>" class="border justify-content-center border-black d-flex btn-beneficio text-center d-md-auto small2 col-md-10 text-dark text-decoration-none rounded-3 py-2 px-4">
-                  <p class="my-auto">Más información</p>
-                  <i class="bi bi-arrow-right fs-6 ms-3 text-dark"></i>
-                </a>
-              </div>
-            </div>
-          </div>
+         
       </div>
     </div>
   </div>

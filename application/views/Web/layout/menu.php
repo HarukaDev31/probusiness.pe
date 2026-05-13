@@ -28,11 +28,8 @@
               <i class="bi bi-chevron-down text-dark ms-1 d-none d-sm-block"></i>
             </div>
             <div class="bg-white submenu px-0 px-lg-0 pb-0 py-lg-2 shadow-sm position-absolute">
-              <a href="<?php echo base_url("agente_compra"); ?>" class="text-dark text-decoration-none small fs-md-6 text-lg-center py-3 py-lg-2 d-block">Agente de compra</a>
               <a href="<?php echo base_url("carga_consolidada"); ?>" class="text-dark text-decoration-none small fs-md-6 text-lg-center py-3 py-lg-2 d-block">Carga consolidada</a>
-              <a href="<?php echo base_url("importacion_grupal"); ?>" class="text-dark small fs-md-6 text-decoration-none text-lg-center py-3 py-lg-2 d-block">Importación grupal</a>
               <a href="<?php echo base_url("curso"); ?>" class="text-dark small fs-md-6 text-decoration-none text-lg-center py-3 py-lg-2 d-block">Curso de importación</a>
-              <a href="<?php echo base_url("viaje_negocios"); ?>" class="text-dark small fs-md-6 text-decoration-none text-lg-center py-3 py-lg-2 d-block">Viaje a China</a>
             </div>
           </div>
          <!-- <div class="px-lg-4 mb-md-0 hover-menu position-relative py-4 py-md-auto my-lg-auto py-lg-0 ">
