@@ -75,6 +75,10 @@ $(document).ready(function () {
   $(document).on('change', 'input[name="radioRedSocial"]', toggleOtros_red_social);
   $(document).on('click', 'label[for^="radioRedSocial"]', function () { setTimeout(toggleOtros_red_social, 10); });
 
+  if (!$('#form-registro').length) {
+    return;
+  }
+
   var iSetinitialCountry = "pe";
   $("#celular_v2").intlTelInput({
     initialCountry: iSetinitialCountry,

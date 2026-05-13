@@ -2,11 +2,12 @@
   <div class="d-flex flex-column flex-md-row justify-content-between my-auto container2 pt-5 mt-5 container px-0 px-md-auto pb-md-5 pt-6">
     <div class="col-md-5 position-absolute position-md-relative px-3 px-md-0 z-index top-0 col-12 h-100 d-flex flex-column justify-content-end py-5 py-md-auto justify-content-md-center">
       <div>
-        <h1 class="mb-4 text-color fw-bold wow fadeInUp" data-wow-duration=".5s" data-wow-delay=".2s">Dominia el Arte de la Importación</h1>
+        <h1 class="mb-4 text-color fw-bold wow fadeInUp" data-wow-duration=".5s" data-wow-delay=".2s">Curso de importación</h1>
         <p class="text-color font-epilogue font-epilogue_300">
-        Descubre nuestros cursos especializados en importaciones para llevar a tu negocio al siguiente nivel.
+        Estamos preparando un nuevo temario del curso. Pronto compartiremos la información actualizada. Si deseas resolver dudas, contáctanos.
         </p>
-        <a href="#planes" class="text-white small d-md-auto text-center d-block col-md-8 col-lg-6 hover-naranja col-7 bg-naranja text-decoration-none py-3 rounded-3 px-4 wow fadeInUp" data-wow-duration=".5s" data-wow-delay=".6s">Ver planes</a>
+        <a href="#contacto" class="text-white small d-md-auto text-center d-block col-md-8 col-lg-6 hover-naranja col-7 bg-naranja text-decoration-none py-3 rounded-3 px-4 wow fadeInUp" data-wow-duration=".5s" data-wow-delay=".6s">Consultar</a>
+   
       </div>
     </div>
     <div class="col-md-6 ps-md-2">
@@ -22,256 +23,7 @@
   </div>
 </div>
 
-<div class="py-5">
-  <!-- Div nuevo planes -->
-  <div class="container" id="planes">
-    <div class="py-5">
-      <h1 class="fw-bold mb-3 text-center">Domina el Arte de la Importación</h1>
-      <p class="text-center">
-        Descubre nuestros cursos especializados en importaciones para llevar tu
-        negocio al siguiente nivel
-      </p>
-    </div>
-    <?php
-      $sApiPlanes = isset($sApiCursoMembresiaPlanes) ? $sApiCursoMembresiaPlanes : '';
-    ?>
-    <div class="py-5 d-flex justify-content-center flex-wrap"
-         id="planes-membresia-root"
-         data-planes-api-url="<?php echo htmlspecialchars($sApiPlanes, ENT_QUOTES, 'UTF-8'); ?>">
-      <div class="col-12 text-center py-4">
-        <div class="spinner-border text-secondary" role="status"><span class="visually-hidden">Cargando planes...</span></div>
-      </div>
-    </div>
-  </div>
-  <!-- Fin -->
-  <div class="container mt-5 bg-white div-pago_curso" style="display:none;">
-    <div class="row justify-content-center">
-      <div class="col-md-12 home-div-card box-plan p-5">
-        <div id="plan-elegido-badge" class="text-center mb-3" style="display:none;">
-          <span class="badge bg-dark fs-6 px-4 py-2" id="plan-elegido-nombre"></span>
-          <span class="badge bg-success fs-5 px-4 py-2 ms-2" id="plan-elegido-precio"></span>
-        </div>
-        <?php
-        $attributes = array('id' => 'form-registro');
-        echo form_open('', $attributes);
-        ?>
-          <div class="col-12 col-sm-12 col-md-12 col-lg-12 mb-4 text-center">
-            <h4 class="modal-title fw-bold" id="">Regístrate</h4>
-          </div>
-          
-          <div class="row">
-            <div class="col-12 col-sm-6 col-md-6 col-lg-4 mb-3">
-              <label class="fw-bold mb-2" for="floatEmail">Email</label>
-              <div class="form-group">
-                <input type="email" inputmode="email" class="form-control" id="emailform" name="email" placeholder="">
-                <span class="help-block text-danger" id="error"></span>
-              </div>
-            </div>
-            
-            <div class="col-12 col-sm-6 col-md-6 col-lg-3 mb-3">
-              <input type="hidden" value="51" id="codigo_pais" name="codigo_pais" class="form-control">
-              <label for="celular_v2" class="fw-bold mb-2">Celular</label>
-              <div class="form-group">
-                <input type="text" inputmode="tel" class="form-control input-number w-100" id="celular_v2" name="celular_v2" placeholder="" style="width: 100%;">
-                <span class="help-block text-danger" id="error"></span>
-              </div>
-            </div>
-
-            <div class="col-12 col-sm-6 col-md-6 col-lg-2 mb-3">
-              <label for="dni" class="fw-bold mb-2">T. Doc. Ident.</label>
-              <select name="cbo-tipo_documento_identidad" id="cbo-tipo_documento_identidad" class="form-select form-select-md mb-3" aria-label=".form-select-lg example">
-                <option value="0" disabled selected="selected"  style="color: #f2f2f2 !important">- Seleccionar -</option>
-                <option value="2" data-nu_cantidad_caracteres="8">DNI</option>
-                <option value="4" data-nu_cantidad_caracteres="11">RUC</option>
-                <option value="5" data-nu_cantidad_caracteres="12">PASAPORTE</option>
-                <option value="1" data-nu_cantidad_caracteres="15">OTROS</option>
-                <option value="3" data-nu_cantidad_caracteres="12">CARNET EXTRANJERIA</option>
-                <option value="6" data-nu_cantidad_caracteres="15">CEDULA DIPLO. IDENTI</option>
-              </select>
-              <span class="help-block text-danger" id="error"></span>
-            </div>
-
-            <div class="col-12 col-sm-6 col-md-6 col-lg-3 mb-3">
-              <label for="dni" class="fw-bold mb-2">Nro. Doc. Ident.</label>
-              <div class="form-group">
-                <input type="text" class="form-control input-number_letter" id="dni" name="dni" placeholder="">
-                <span class="help-block text-danger" id="error"></span>
-              </div>
-            </div>
-
-            <div class="col-12 col-sm-6 col-md-6 col-lg-6 mb-3">
-              <label for="name" class="fw-bold mb-2">Nombres y Apellidos</label>
-              <div class="form-group">
-                <input type="text" class="form-control" id="name" name="name" placeholder="">
-                <span class="help-block text-danger" id="error"></span>
-              </div>
-            </div>
-          
-            <div class="col-12 col-sm-6 col-md-6 col-lg-2 mb-3">
-              <label for="edad" class="fw-bold mb-2">F. Nacimiento</label>
-              <div class="input-group date" id="datepicker">
-                <input type="text" class="form-control" id="date" name="date" style="border-top: 0;border-left: 0;border-right: 0;" value="<?php echo dateNow('month_date_report_crud'); ?>" placeholder="Fecha de Viaje" />
-                <span class="input-group-append"></span>
-              </div>
-              <span class="help-block text-danger" id="error"></span>
-            </div>
-
-            <div class="col-6 col-sm-6 col-md-6 col-lg-2 mb-3 d-none">
-              <label for="edad" class="fw-bold mb-2">Edad</label>
-              <div class="form-group">
-                <input type="text" inputmode="numeric" class="form-control input-number" id="edad" name="edad" placeholder="">
-                <span class="help-block text-danger" id="error"></span>
-              </div>
-            </div>
-          
-            <div class="col-12 col-sm-6 col-md-6 col-lg-4 mb-3">
-              <label for="radioSexo" class="fw-bold mb-2">Sexo</label>
-              <div class="form-group">
-                <div>
-                  <div class="form-check form-check-inline me-1 me-sm-3">
-                    <input style="cursor: pointer" class="form-check-input" type="radio" name="radioSexo" id="radioSexoH" value="1">
-                    <label style="cursor: pointer" class="form-check-label" for="radioSexoH">Hombre</label>
-                  </div>
-                  <div class="form-check form-check-inline me-1 me-sm-3">
-                    <input style="cursor: pointer" class="form-check-input" type="radio" name="radioSexo" id="radioSexoM" value="2">
-                    <label style="cursor: pointer" class="form-check-label" for="radioSexoM">Mujer</label>
-                  </div>
-                  <div class="form-check form-check-inline me-1 me-sm-3">
-                    <input style="cursor: pointer" class="form-check-input" type="radio" name="radioSexo" id="radioSexoO" value="3">
-                    <label style="cursor: pointer" class="form-check-label" for="radioSexoO">Otros</label>
-                  </div>
-                </div>
-                <span class="help-block text-danger" id="error"></span>
-              </div>
-            </div>
-          
-            <div class="col-12 col-sm-12 col-md-12 col-lg-12 mb-3">
-              <label for="radioSexo" class="fw-bold mb-2">¿Como te enteraste de nosotros?</label>
-              <div class="form-group">
-                <div>
-                  <div class="form-check form-check-inline me-1 me-sm-3">
-                    <input style="cursor: pointer" class="form-check-input" type="radio" name="radioRedSocial" id="radioRedSocial1" value="1">
-                    <label style="cursor: pointer" class="form-check-label" for="radioRedSocial1">Tiktok</label>
-                  </div>
-                  <div class="form-check form-check-inline me-1 me-sm-3">
-                    <input style="cursor: pointer" class="form-check-input" type="radio" name="radioRedSocial" id="radioRedSocial2" value="2">
-                    <label style="cursor: pointer" class="form-check-label" for="radioRedSocial2">Facebook</label>
-                  </div>
-                  <div class="form-check form-check-inline me-1 me-sm-3">
-                    <input style="cursor: pointer" class="form-check-input" type="radio" name="radioRedSocial" id="radioRedSocial3" value="3">
-                    <label style="cursor: pointer" class="form-check-label" for="radioRedSocial3">Instagram</label>
-                  </div>
-                  <div class="form-check form-check-inline me-1 me-sm-3">
-                    <input style="cursor: pointer" class="form-check-input" type="radio" name="radioRedSocial" id="radioRedSocial4" value="4">
-                    <label style="cursor: pointer" class="form-check-label" for="radioRedSocial4">Youtube</label>
-                  </div>
-                  <div class="form-check form-check-inline me-1 me-sm-3">
-                    <input style="cursor: pointer" class="form-check-input" type="radio" name="radioRedSocial" id="radioRedSocial5" value="5">
-                    <label style="cursor: pointer" class="form-check-label" for="radioRedSocial5">Familiares/Amigos</label>
-                  </div>
-                  <div class="form-check form-check-inline me-1 me-sm-3">
-                    <input style="cursor: pointer" class="form-check-input" type="radio" name="radioRedSocial" id="radioRedSocial6" value="6">
-                    <label style="cursor: pointer" class="form-check-label" for="radioRedSocial6">Otros</label>
-                  </div>
-                </div>
-                <span class="help-block text-danger" id="error"></span>
-              </div>
-            </div>
-            
-            <div class="col-12 col-sm-12 col-md-12 col-lg-12 mb-3" id="div-otros_red_social">
-              <label for="name" class="fw-bold mb-2">Otros</label>
-              <div class="form-group">
-                <input type="text" class="form-control" id="otros_red_social" name="otros_red_social" placeholder="">
-                <span class="help-block text-danger" id="error"></span>
-              </div>
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="col-12 col-sm-12 col-md-12 col-lg-12 mb-4">
-              <label class="fw-bold mb-2">Pais</label>
-              <div class="form-group">
-                <select name="cbo-pais" id="cbo-pais" class="form-select" style="width: 100%;">
-                  <option value="0" selected="selected">- Seleccionar -</option>
-                  <?php foreach ($arrPais['result'] as $row) { ?>
-                    <option value="<?php echo $row->ID_Pais; ?>"><?php echo $row->No_Pais; ?></option>
-                  <?php } ?>
-                </select>
-                <span class="help-block text-danger" id="error"></span>
-              </div>
-            </div>
-          </div>
-
-          <div class="row div-ubigeo_peru">
-            <div class="col-12 col-sm-4 col-md-6 col-lg-4 mb-4">
-              <label class="fw-bold mb-2">Departamento</label>
-              <div class="form-group">
-                <select name="cbo-departamento" id="cbo-departamento" class="form-select" style="width: 100%;">
-                  <option value="0" selected="selected">- Seleccionar -</option>
-                </select>
-                <span class="help-block text-danger" id="error"></span>
-              </div>
-            </div>
-
-            <div class="col-12 col-sm-4 col-md-6 col-lg-4 mb-4">
-              <label class="fw-bold mb-2">Provincia</label>
-              <div class="form-group">
-                <select name="cbo-provincia" id="cbo-provincia" class="form-select"  style="width: 100%;">
-                  <option value="0" selected="selected">- Seleccionar -</option>
-                </select>
-              </div>
-              <span class="help-block text-danger" id="error"></span>
-            </div>
-
-            <div class="col-12 col-sm-4 col-md-6 col-lg-4 mb-4">
-              <label class="fw-bold mb-2">Distrito</label>
-              <div class="form-group">
-                <select name="cbo-distrito" id="cbo-distrito" class="form-select"  style="width: 100%;">
-                  <option value="0" selected="selected">- Seleccionar -</option>
-                </select>
-                <span class="help-block text-danger" id="error"></span>
-              </div>
-            </div>
-          </div>
-
-          <input type="hidden" name="plan_tipo_pago" id="plan_tipo_pago" value="1">
-          <input type="hidden" name="plan_price_amount" id="plan_price_amount" value="">
-          <div class="col-12 col-sm-12 col-md-12 col-lg-12 mb-3">
-            <button type="submit" id="btn-crear_cuenta" data-tipo_token="formToken" class="btn btn-dark btn-lg btn-verificar w-100">Finalizar compra</button>
-          </div>
-          <?php //array_debug($arrResponsePay); ?>
-          <input type="hidden" id="formToken" value="<?php echo $formToken; ?>">
-          <input type="hidden" id="formTokenv2" value="<?php echo $formTokenv2; ?>">
-          <input type="hidden" id="formTokenv3" value="<?php echo $formTokenv3; ?>">
-          <div class="row mb-0 izipay-kr-hidden-row">
-            <div class="col-12 col-sm-12 col-md-12 col-lg-12 mb-0 izipay-kr-hidden-col">
-              <div class="kr-embedded" kr-popin kr-form-token="<?php echo $formToken;?>">
-                <input type="hidden" id="id_pedido_curso" name="acme-id" value=""/>
-                <input type="hidden" id="hidden_email" name="acme-email" value=""/>
-                <input type="hidden" id="hidden_password" name="acme-password" value=""/>
-                <input type="hidden" id="hidden_name" name="acme-name" value=""/>
-                <div class="kr-pan"></div>
-                <div class="kr-expiry"></div>
-                <div class="kr-security-code"></div>
-                <button class="kr-payment-button" type="button">Pagar</button>
-                <div class="kr-form-error"></div>
-              </div>
-            </div>
-          </div>
-        <?php echo form_close(); ?>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- Overlay negro: visible mientras carga y mientras el iframe/modal de Izipay está abierto -->
-<div id="izipay-loading-overlay" class="izipay-loading-overlay-root" style="display:none;" aria-hidden="true">
-  <div class="izipay-loading-panel text-center text-white px-3">
-    <div class="spinner-border text-light mb-3" style="width:3rem;height:3rem;" role="status"></div>
-    <p class="fw-bold fs-5 mb-1">Abriendo formulario de pago...</p>
-    <p class="mb-0 fs-6" id="izipay-loading-monto"></p>
-  </div>
-</div>
-<!-- fin de planes -->
+<!-- Planes y checkout retirados temporalmente (nuevo temario en preparación). -->
 
 <!-- testimonios -->
 <div class="py-5 bg-dark">
@@ -496,7 +248,7 @@
           </h2>
           <div id="collapseEight" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
             <div class="accordion-body px-0 text-dark font-epilogue">
-            Sí, nos encontramos ubicados en Jirón Alberto Barton N° 527 - 531, Santa Catalina, La Victoria. Estamos abiertos de Lunes a Viernes de 10AM a 6PM y los Sábados de 10AM a 2PM para recibirte y realizar tu pago.
+            Tenemos nuestra oficina en Perú, ubicada en Av. Nicolás Arriola 314, La Victoria. Estamos abiertos de lunes a viernes de 10:00 am. a 6:00 pm. para recibirte y realizar cualquier consulta o pago.
             </div>
           </div>
         </div>
@@ -577,51 +329,103 @@
 <div class="py-5 bg-gradiente-naranja">
     <div class="container">
       <div class=" my-5">
-         <div class="col-md-12 d-flex  mb-5 justify-content-between">
-            <h6 class=" text-white text-md-center  fs-3 my-auto  wow fadeInUp" data-wow-duration=".5s" data-wow-delay=".2s">Nuestro equipo de trabajo</h6>
-            <div class="d-md-flex justify-content-md-start justify-content-end d-flex mt-md-5 my-4 my-md-auto wow fadeInUp" data-wow-duration=".5s" data-wow-delay=".2s">
-                <button class="custom-prev-button-short hover-naranja border-white border shorts-button-prev rounded-3 ms-2">
-                  <i class="bi bi-arrow-left text-white"></i>
-                </button>
-                <button class="custom-next-button-short hover-naranja shorts-button-next rounded-3 ms-2"><!--border-icon-->
-                  <i class="bi bi-arrow-right text-white"></i>
-                </button>
-              </div>
+         <div class="col-md-12 mb-5">
+            <h6 class=" text-white text-md-center  fs-3 my-auto  wow fadeInUp" data-wow-duration=".5s" data-wow-delay=".2s">INSTRUCTORES</h6>
          </div>
-         <div class="col-md-12 shorts my-auto d-flex flex-wrap">
+         <div class="col-md-12 curso-instructores-flip-wrap my-auto d-flex flex-wrap justify-content-center">
+            <?php $cdn_instructors_curso = 'https://cdn.probusiness.pe/landingcurso/figma/instructors'; ?>
             <div class="col-md-4 col-6 mb-3 px-2 wow fadeInUp" data-wow-duration=".5s" data-wow-delay=".2s">
-                <div class="w-100">
-                    <div class="bx-img">
-                      <img src="<?php echo base_url("assets/img/nosotros/team_miguel.jpeg"); ?>" class="img-fluid" alt="CEO Miguel Villegas">
-                      <button class="border-0 bg-transparent"><i class="bi bi-plus-square"></i></button>
-                    </div>
-                    <div class="mt-md-3 mt-3">
-                        <h6 class="text-white fw-bold mb-1">Miguel Villegas</h6>
-                        <p class="text-white">CEO</p>
+                <div class="curso-instructor-flip w-100" aria-expanded="false">
+                    <div class="curso-instructor-flip-inner">
+                        <div class="curso-instructor-face curso-instructor-front">
+                            <div class="bx-img">
+                                <img src="<?php echo $cdn_instructors_curso; ?>/miguel.webp" class="img-fluid" alt="CEO Miguel Villegas" loading="lazy" decoding="async">
+                                <button type="button" class="curso-instructor-btn-flip border-0 bg-transparent" aria-label="Ver perfil de Miguel Villegas"><i class="bi bi-plus-square"></i></button>
+                            </div>
+                            <div class="mt-md-3 mt-3">
+                                <h6 class="text-white fw-bold mb-1">Miguel Villegas</h6>
+                                <p class="text-white mb-0">CEO</p>
+                            </div>
+                        </div>
+                        <div class="curso-instructor-face curso-instructor-back">
+                            <button type="button" class="curso-instructor-btn-flip border-0 bg-transparent" aria-label="Volver a la foto"><i class="bi bi-x-lg"></i></button>
+                            <div class="curso-instructor-back-scroll">
+                                <p class="curso-instructor-back-kicker">CEO Pro<br>Business</p>
+                                <p class="curso-instructor-back-role">Estratega</p>
+                                <ul class="curso-instructor-back-list">
+                                    <li>Manejo de empresa en China y Perú</li>
+                                    <li>Gestión de equipo de trabajo</li>
+                                    <li>Automatización</li>
+                                    <li>Implementación de procesos</li>
+                                    <li>Costos</li>
+                                    <li>Análisis de KPIs</li>
+                                    <li>Marketing</li>
+                                </ul>
+                                <p class="curso-instructor-back-name">Miguel Villegas</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <!-- <div class="col-md-4 col-6 mb-3 px-2 wow fadeInUp" data-wow-duration=".5s" data-wow-delay=".2s">
-                <div class="w-100">
-                    <div class="bx-img">
-                      <img src="<?php echo base_url("assets/img/nosotros/team_daniel.jpeg"); ?>" class="img-fluid" alt="Director Comex Daniel Castillo">
-                      <button class="border-0 bg-transparent"><i class="bi bi-plus-square"></i></button>
-                    </div>
-                    <div class="mt-md-3 mt-3">
-                      <h6 class="text-white mb-1">Daniel Castillo</h6>
-                      <p class="text-white">Director Comex</p>
+            <div class="col-md-4 col-6 mb-3 px-2 wow fadeInUp" data-wow-duration=".5s" data-wow-delay=".2s">
+                <div class="curso-instructor-flip w-100" aria-expanded="false">
+                    <div class="curso-instructor-flip-inner">
+                        <div class="curso-instructor-face curso-instructor-front">
+                            <div class="bx-img">
+                                <img src="<?php echo $cdn_instructors_curso; ?>/meliza.webp" class="img-fluid" alt="Meliza Valle" loading="lazy" decoding="async">
+                                <button type="button" class="curso-instructor-btn-flip border-0 bg-transparent" aria-label="Ver perfil de Meliza Valle"><i class="bi bi-plus-square"></i></button>
+                            </div>
+                            <div class="mt-md-3 mt-3">
+                                <h6 class="text-white mb-1">Meliza Valle</h6>
+                                <p class="text-white mb-0">Jefa de importaciones</p>
+                            </div>
+                        </div>
+                        <div class="curso-instructor-face curso-instructor-back">
+                            <button type="button" class="curso-instructor-btn-flip border-0 bg-transparent" aria-label="Volver a la foto"><i class="bi bi-x-lg"></i></button>
+                            <div class="curso-instructor-back-scroll">
+                                <p class="curso-instructor-back-kicker">Jefa de<br>importaciones</p>
+                                <p class="curso-instructor-back-role">Operaciones internacionales marítimas</p>
+                                <ul class="curso-instructor-back-list">
+                                    <li>Permisos</li>
+                                    <li>Documentación</li>
+                                    <li>Tiempos</li>
+                                    <li>Implementación de procesos</li>
+                                    <li>Negociación operadores comex</li>
+                                </ul>
+                                <p class="curso-instructor-back-name">Meliza Valle</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div> -->
-             <div class="col-md-4 col-6 mb-3 px-2 wow fadeInUp" data-wow-duration=".5s" data-wow-delay=".2s">
-                <div class="w-100">
-                    <div class="bx-img">
-                      <img src="<?php echo base_url("assets/img/nosotros/team_meliza.jpeg"); ?>" class="img-fluid" alt="Directora Comercial Meliza Valle">
-                      <button class="border-0 bg-transparent"><i class="bi bi-plus-square"></i></button>
-                    </div>
-                    <div class="mt-md-3 mt-3">
-                      <h6 class="text-white mb-1">Meliza Valle</h6>
-                      <p class="text-white">Directora Comercial</p>
+            </div>
+            <div class="col-md-4 col-6 mb-3 px-2 wow fadeInUp" data-wow-duration=".5s" data-wow-delay=".2s">
+                <div class="curso-instructor-flip w-100" aria-expanded="false">
+                    <div class="curso-instructor-flip-inner">
+                        <div class="curso-instructor-face curso-instructor-front">
+                            <div class="bx-img">
+                                <img src="<?php echo $cdn_instructors_curso; ?>/danitza.webp" class="img-fluid" alt="Danitza" loading="lazy" decoding="async">
+                                <button type="button" class="curso-instructor-btn-flip border-0 bg-transparent" aria-label="Ver perfil de Danitza"><i class="bi bi-plus-square"></i></button>
+                            </div>
+                            <div class="mt-md-3 mt-3">
+                                <h6 class="text-white mb-1">Danitza</h6>
+                                <p class="text-white mb-0">Analista de importaciones</p>
+                            </div>
+                        </div>
+                        <div class="curso-instructor-face curso-instructor-back">
+                            <button type="button" class="curso-instructor-btn-flip border-0 bg-transparent" aria-label="Volver a la foto"><i class="bi bi-x-lg"></i></button>
+                            <div class="curso-instructor-back-scroll">
+                                <p class="curso-instructor-back-kicker">Analista de<br>importaciones</p>
+                                <p class="curso-instructor-back-role">Manejo de importaciones aéreas y marítimas</p>
+                                <ul class="curso-instructor-back-list">
+                                    <li>China</li>
+                                    <li>USA</li>
+                                    <li>Tiempos</li>
+                                    <li>Permisos</li>
+                                    <li>Documentación</li>
+                                </ul>
+                                <p class="curso-instructor-back-name">Danitza</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -674,22 +478,21 @@
           </div>
        </div>
        <div class="border-bottom border-black w-100 col-md-10 mx-auto my-5 d-none"></div>
-        <h6 class="text-dark fs-4 mb-5">Ubícanos</h6>
-       <div class="d-flex flex-wrap pb-4 wow fadeInUp" data-wow-duration=".5s" data-wow-delay=".2s">
-          <div class="col-md-6 mb-3 mb-md-0 col-12 px-2">
-            <div class="border h-100 p-3 border-black rounded-15">
-              <img src="assets/img/curso/location.svg" alt="">
-              <h6 class="fw-bold mb-2 mt-3">Dirección</h6>
-              <div class="d-flex">
-                <div class="col-md-12">
-                  <p class="mb-1">Jirón, Alberto Barton N° 527 - 531. Santa Catalina, La Victoria</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-12 wow fadeInUp" data-wow-duration=".5s" data-wow-delay=".2s">
-              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3901.3659516420566!2d-77.0260655249414!3d-12.087080842652687!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c862e860c29f%3A0x5fa6a61936f99433!2sAlberto%20Bart%C3%B3n%20527%2C%20Lima%2015034!5e0!3m2!1ses-419!2spe!4v1706135614994!5m2!1ses-419!2spe" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-          </div>
-       </div>
     </div>
   </div>
+<script>
+(function () {
+  var wrap = document.querySelector('.curso-instructores-flip-wrap');
+  if (!wrap) return;
+  wrap.addEventListener('click', function (e) {
+    var btn = e.target.closest('.curso-instructor-btn-flip');
+    if (!btn) return;
+    e.preventDefault();
+    e.stopPropagation();
+    var card = btn.closest('.curso-instructor-flip');
+    if (!card) return;
+    card.classList.toggle('is-flipped');
+    card.setAttribute('aria-expanded', card.classList.contains('is-flipped') ? 'true' : 'false');
+  });
+})();
+</script>

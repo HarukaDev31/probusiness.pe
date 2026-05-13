@@ -106,6 +106,7 @@
     </script>
     <script>
     $(function(){
+      if (!$('#datepicker').length) return;
       var fToday = new Date();
       fToday.setHours(23, 59, 59, 999); /* endDate incluye el día de hoy */
       var fMonth = fToday.getMonth() + 1;

@@ -964,7 +964,8 @@ border-bottom: 1px solid #7e7e7e;
     overflow: hidden;
     border-radius: 15px;
 }
-.bx-portada iframe {
+.bx-portada iframe,
+.bx-portada video {
     max-height: 390px !important;
 }
 .bx-portada .rounded-15{
@@ -979,6 +980,137 @@ border-bottom: 1px solid #7e7e7e;
 .bx-img:hover img{
     border: 1px solid #FF500B;
     border-radius: 15px;
+}
+
+/* Flip cards instructores — curso membresía */
+.curso-instructores-flip-wrap {
+    --curso-flip-img-h: 500px;
+    --curso-flip-min-h: calc(var(--curso-flip-img-h) + 130px);
+}
+.curso-instructor-flip {
+    perspective: 1100px;
+}
+.curso-instructor-flip-inner {
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.65s cubic-bezier(0.4, 0.2, 0.2, 1);
+    min-height: var(--curso-flip-min-h);
+}
+.curso-instructor-flip.is-flipped .curso-instructor-flip-inner {
+    transform: rotateY(180deg);
+}
+.curso-instructor-face {
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+.curso-instructor-front {
+    position: relative;
+    height: 100%;
+    min-height: var(--curso-flip-min-h);
+    display: flex;
+    flex-direction: column;
+}
+.curso-instructor-front .bx-img {
+    flex-shrink: 0;
+    height: var(--curso-flip-img-h);
+    overflow: hidden;
+    border-radius: 15px;
+}
+.curso-instructor-front .bx-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+}
+.curso-instructor-back {
+    position: absolute;
+    inset: 0;
+    transform: rotateY(180deg);
+    background: linear-gradient(145deg, #1a1a1a 0%, #2d2d2d 100%);
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    padding: 0.75rem 0.85rem 0.85rem;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    color: #fff;
+}
+.curso-instructor-back-scroll {
+    flex: 1;
+    overflow-y: auto;
+    padding-top: 0.25rem;
+    -webkit-overflow-scrolling: touch;
+}
+.curso-instructor-back .curso-instructor-btn-flip {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 3;
+    color: #fff;
+    font-size: 1.35rem;
+    line-height: 1;
+    padding: 0.25rem;
+    cursor: pointer;
+}
+.curso-instructor-front .curso-instructor-btn-flip {
+    cursor: pointer;
+}
+.curso-instructor-back-kicker {
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    margin-bottom: 0.15rem;
+    line-height: 1.25;
+    padding-right: 2rem;
+}
+.curso-instructor-back-role {
+    font-size: 0.82rem;
+    color: #FF9B6B;
+    font-weight: 600;
+    margin-bottom: 0.65rem;
+}
+.curso-instructor-back-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 0.75rem;
+    font-size: 0.78rem;
+    line-height: 1.35;
+}
+.curso-instructor-back-list li {
+    position: relative;
+    padding-left: 1rem;
+    margin-bottom: 0.35rem;
+    color: rgba(255, 255, 255, 0.92);
+}
+.curso-instructor-back-list li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.45em;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #FF500B;
+}
+.curso-instructor-back-name {
+    font-weight: 700;
+    font-size: 0.95rem;
+    margin-top: auto;
+    margin-bottom: 0;
+    padding-top: 0.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+@media (max-width: 767.98px) {
+    .curso-instructores-flip-wrap {
+        --curso-flip-img-h: 400px;
+    }
+}
+@media (prefers-reduced-motion: reduce) {
+    .curso-instructor-flip-inner {
+        transition: none;
+    }
 }
 .bx-portada img {
    width: 100%;

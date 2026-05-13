@@ -198,6 +198,7 @@
         </div>
           <div class="col-md-9 wow fadeInUp" data-wow-duration=".5s" data-wow-delay=".2s">
             <div class="shorts">
+              <?php $cdn_landing_videos = 'https://cdn.probusiness.pe/landing'; ?>
               <div class="ps-md-3 ps-1 rounded-15">
                 <div class="d-flex h-100 p-0 box-benefits flex-column flex-md-row justify-content-center">
                   <div class="p-1 rounded-15 bx-portada position-relative">
@@ -205,7 +206,9 @@
                       <img src="assets/img/home/equipo_china_probusiness.jpg" alt="Nuestro equipo de trabajo en china" class="w-100">
                     </div>
                     <div class="rounded-15">
-                      <iframe width="100%" height="600" src="https://www.youtube.com/embed/JHDPg0Q1tpM?si=QCzs9n6Uj1k7KrxM" title="Nuestro equipo de trabajo en china" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                      <video class="w-100" width="100%" height="600" controls playsinline preload="metadata" title="Nuestro equipo de trabajo en china">
+                        <source src="<?php echo $cdn_landing_videos; ?>/TikVid.io_7567580877408996629-hd.mp4" type="video/mp4">
+                      </video>
                     </div>
                   </div>
                 </div>
@@ -218,7 +221,9 @@
                       <img src="assets/img/home/nuestro_cliente_china_probusiness.png" alt="Recibiendo a nuestros clientes en china" class="w-100">
                     </div>
                     <div class="rounded-15">
-                      <iframe width="100%" height="600" src="https://www.youtube.com/embed/nIa0n4DuD4w?si=psoTDg8-XOJkinVh" title="Recibiendo a nuestros clientes en china" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                      <video class="w-100" width="100%" height="600" controls playsinline preload="metadata" title="Recibiendo a nuestros clientes en china">
+                        <source src="<?php echo $cdn_landing_videos; ?>/TikVid.io_7571987363304393995-hd.mp4" type="video/mp4">
+                      </video>
                     </div>
                   </div>
                 </div>
@@ -231,7 +236,9 @@
                       <img src="assets/img/home/cliente.jpg" alt="Nuestro de Cliente Noé importo zapatillas" class="w-100">
                     </div>
                     <div class="rounded-15">
-                      <iframe width="100%" height="600" src="https://www.youtube.com/embed/SOgH8w6wG-o?si=JENp9eD4SRJTU4x8" title="Nuestro de Cliente Noé importo zapatillas" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                      <video class="w-100" width="100%" height="600" controls playsinline preload="metadata" title="Nuestro de Cliente Noé importo zapatillas">
+                        <source src="<?php echo $cdn_landing_videos; ?>/TikVid.io_7573862255759002892-hd.mp4" type="video/mp4">
+                      </video>
                     </div>
                   </div>
                 </div>
@@ -244,7 +251,39 @@
                       <img src="assets/img/home/cliente_2.jpg" alt="Nuestro de Cliente Gerardo importo scooter" class="w-100">
                     </div>
                     <div class="rounded-15">
-                      <iframe width="100%" height="600" src="https://www.youtube.com/embed/7Dwcwe4LVSA?si=J4YonP-hyWyPAs7Y" title="Nuestro de Cliente Gerardo importo scooter" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                      <video class="w-100" width="100%" height="600" controls playsinline preload="metadata" title="Nuestro de Cliente Gerardo importo scooter">
+                        <source src="<?php echo $cdn_landing_videos; ?>/TikVid.io_7605752366167592212-hd.mp4" type="video/mp4">
+                      </video>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="ps-md-3 ps-1 rounded-15">
+                <div class="d-flex h-100 p-0 box-benefits flex-column flex-md-row justify-content-center">
+                  <div class="p-1 rounded-15 bx-portada position-relative">
+                    <div class="position-absolute ">
+                      <img src="assets/img/home/equipo_china_probusiness.jpg" alt="Testimonio cliente Probusiness" class="w-100">
+                    </div>
+                    <div class="rounded-15">
+                      <video class="w-100" width="100%" height="600" controls playsinline preload="metadata" title="Testimonio cliente Probusiness">
+                        <source src="<?php echo $cdn_landing_videos; ?>/TikVid.io_7625792406214135041-hd.mp4" type="video/mp4">
+                      </video>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="ps-md-3 ps-1 rounded-15">
+                <div class="d-flex h-100 p-0 box-benefits flex-column flex-md-row justify-content-center">
+                  <div class="p-1 rounded-15 bx-portada position-relative">
+                    <div class="position-absolute ">
+                      <img src="assets/img/home/nuestro_cliente_china_probusiness.png" alt="Testimonio cliente Probusiness" class="w-100">
+                    </div>
+                    <div class="rounded-15">
+                      <video class="w-100" width="100%" height="600" controls playsinline preload="metadata" title="Testimonio cliente Probusiness">
+                        <source src="<?php echo $cdn_landing_videos; ?>/TikVid.io_7631722403843951893-hd.mp4" type="video/mp4">
+                      </video>
                     </div>
                   </div>
                 </div>
@@ -259,77 +298,80 @@
       <div class="sliderp">
 	      <div class="slide-trackp">
           <div class="slidep px-2">
-            <a class="text-decoration-none text-black" href="<?php echo base_url("agente_compra"); ?>"><p class="px-3 py-2 rounded-pill border-verde border">Agente de compras</p></a>
-          </div>
-          <div class="slidep px-2">
             <a class="text-decoration-none text-black" href="<?php echo base_url("carga_consolidada"); ?>"><p class="px-3 py-2 rounded-pill border-orange border">Carga Consolidada</p></a>
-          </div>
-          <div class="slidep px-2">
-            <a class="text-decoration-none text-black" href="<?php echo base_url("viaje_negocios"); ?>"><p class="px-3 py-2 rounded-pill border-verde border">Viaje a China</p></a>
-          </div>
-          <div class="slidep px-2">
-            <a class="text-decoration-none text-black" href="<?php echo base_url("importacion_grupal"); ?>"><p class="px-3 py-2 rounded-pill border-orange border">Importación grupal</p></a>
           </div>
           <div class="slidep px-2">
             <a class="text-decoration-none text-black" href="<?php echo base_url("curso"); ?>"><p class="px-3 py-2 rounded-pill border-orange border">Curso de importación</p></a>
           </div>
           <div class="slidep px-2">
-            <a class="text-decoration-none text-black" href="<?php echo base_url("agente_compra"); ?>"><p class="px-3 py-2 rounded-pill border-verde border">Agente de compras</p></a>
-          </div>
-          <div class="slidep px-2">
             <a class="text-decoration-none text-black" href="<?php echo base_url("carga_consolidada"); ?>"><p class="px-3 py-2 rounded-pill border-orange border">Carga Consolidada</p></a>
-          </div>
-          <div class="slidep px-2">
-            <a class="text-decoration-none text-black" href="<?php echo base_url("viaje_negocios"); ?>"><p class="px-3 py-2 rounded-pill border-verde border">Viaje a China</p></a>
-          </div>
-          <div class="slidep px-2">
-            <a class="text-decoration-none text-black" href="<?php echo base_url("importacion_grupal"); ?>"><p class="px-3 py-2 rounded-pill border-orange border">Importación grupal</p></a>
           </div>
           <div class="slidep px-2">
             <a class="text-decoration-none text-black" href="<?php echo base_url("curso"); ?>"><p class="px-3 py-2 rounded-pill border-orange border">Curso de importación</p></a>
           </div>
           <div class="slidep px-2">
-            <a class="text-decoration-none text-black" href="<?php echo base_url("agente_compra"); ?>"><p class="px-3 py-2 rounded-pill border-verde border">Agente de compras</p></a>
+            <a class="text-decoration-none text-black" href="<?php echo base_url("carga_consolidada"); ?>"><p class="px-3 py-2 rounded-pill border-orange border">Carga Consolidada</p></a>
+          </div>
+          <div class="slidep px-2">
+            <a class="text-decoration-none text-black" href="<?php echo base_url("curso"); ?>"><p class="px-3 py-2 rounded-pill border-orange border">Curso de importación</p></a>
+          </div>
+          <div class="slidep px-2">
+            <a class="text-decoration-none text-black" href="<?php echo base_url("carga_consolidada"); ?>"><p class="px-3 py-2 rounded-pill border-orange border">Carga Consolidada</p></a>
+          </div>
+          <div class="slidep px-2">
+            <a class="text-decoration-none text-black" href="<?php echo base_url("curso"); ?>"><p class="px-3 py-2 rounded-pill border-orange border">Curso de importación</p></a>
+          </div>
+          <div class="slidep px-2">
+            <a class="text-decoration-none text-black" href="<?php echo base_url("carga_consolidada"); ?>"><p class="px-3 py-2 rounded-pill border-orange border">Carga Consolidada</p></a>
+          </div>
+          <div class="slidep px-2">
+            <a class="text-decoration-none text-black" href="<?php echo base_url("curso"); ?>"><p class="px-3 py-2 rounded-pill border-orange border">Curso de importación</p></a>
+          </div>
+          <div class="slidep px-2">
+            <a class="text-decoration-none text-black" href="<?php echo base_url("carga_consolidada"); ?>"><p class="px-3 py-2 rounded-pill border-orange border">Carga Consolidada</p></a>
+          </div>
+          <div class="slidep px-2">
+            <a class="text-decoration-none text-black" href="<?php echo base_url("curso"); ?>"><p class="px-3 py-2 rounded-pill border-orange border">Curso de importación</p></a>
           </div>
         </div>
       </div>
       <div class="sliderq">
 	      <div class="slide-trackq">
             <div class="slideq px-2">
-              <a class="text-decoration-none text-black" href="<?php echo base_url("agente_compra"); ?>"><p class="px-3 py-2 rounded-pill border-verde border">Agente de compras</p></a>
-            </div>
-            <div class="slideq px-2">
               <a class="text-decoration-none text-black" href="<?php echo base_url("carga_consolidada"); ?>"><p class="px-3 py-2 rounded-pill border-orange border">Carga Consolidada</p></a>
-            </div>
-            <div class="slideq px-2">
-              <a class="text-decoration-none text-black" href="<?php echo base_url("viaje_negocios"); ?>"><p class="px-3 py-2 rounded-pill border-verde border">Viaje a China</p></a>
-            </div>
-            <div class="slideq px-2">
-              <a class="text-decoration-none text-black" href="<?php echo base_url("importacion_grupal"); ?>"><p class="px-3 py-2 rounded-pill border-orange border">Importación grupal</p></a>
             </div>
             <div class="slideq px-2">
               <a class="text-decoration-none text-black" href="<?php echo base_url("curso"); ?>"><p class="px-3 py-2 rounded-pill border-orange border">Curso de importación</p></a>
             </div>
             <div class="slideq px-2">
-              <a class="text-decoration-none text-black" href="<?php echo base_url("agente_compra"); ?>"><p class="px-3 py-2 rounded-pill border-verde border">Agente de compras</p></a>
-            </div>
-            <div class="slideq px-2">
               <a class="text-decoration-none text-black" href="<?php echo base_url("carga_consolidada"); ?>"><p class="px-3 py-2 rounded-pill border-orange border">Carga Consolidada</p></a>
-            </div>
-            <div class="slideq px-2">
-              <a class="text-decoration-none text-black" href="<?php echo base_url("viaje_negocios"); ?>"><p class="px-3 py-2 rounded-pill border-verde border">Viaje a China</p></a>
-            </div>
-            <div class="slideq px-2">
-              <a class="text-decoration-none text-black" href="<?php echo base_url("importacion_grupal"); ?>"><p class="px-3 py-2 rounded-pill border-orange border">Importación grupal</p></a>
             </div>
             <div class="slideq px-2">
               <a class="text-decoration-none text-black" href="<?php echo base_url("curso"); ?>"><p class="px-3 py-2 rounded-pill border-orange border">Curso de importación</p></a>
             </div>
             <div class="slideq px-2">
-              <a class="text-decoration-none text-black" href="<?php echo base_url("agente_compra"); ?>"><p class="px-3 py-2 rounded-pill border-verde border">Agente de compras</p></a>
+              <a class="text-decoration-none text-black" href="<?php echo base_url("carga_consolidada"); ?>"><p class="px-3 py-2 rounded-pill border-orange border">Carga Consolidada</p></a>
+            </div>
+            <div class="slideq px-2">
+              <a class="text-decoration-none text-black" href="<?php echo base_url("curso"); ?>"><p class="px-3 py-2 rounded-pill border-orange border">Curso de importación</p></a>
             </div>
             <div class="slideq px-2">
               <a class="text-decoration-none text-black" href="<?php echo base_url("carga_consolidada"); ?>"><p class="px-3 py-2 rounded-pill border-orange border">Carga Consolidada</p></a>
+            </div>
+            <div class="slideq px-2">
+              <a class="text-decoration-none text-black" href="<?php echo base_url("curso"); ?>"><p class="px-3 py-2 rounded-pill border-orange border">Curso de importación</p></a>
+            </div>
+            <div class="slideq px-2">
+              <a class="text-decoration-none text-black" href="<?php echo base_url("carga_consolidada"); ?>"><p class="px-3 py-2 rounded-pill border-orange border">Carga Consolidada</p></a>
+            </div>
+            <div class="slideq px-2">
+              <a class="text-decoration-none text-black" href="<?php echo base_url("curso"); ?>"><p class="px-3 py-2 rounded-pill border-orange border">Curso de importación</p></a>
+            </div>
+            <div class="slideq px-2">
+              <a class="text-decoration-none text-black" href="<?php echo base_url("carga_consolidada"); ?>"><p class="px-3 py-2 rounded-pill border-orange border">Carga Consolidada</p></a>
+            </div>
+            <div class="slideq px-2">
+              <a class="text-decoration-none text-black" href="<?php echo base_url("curso"); ?>"><p class="px-3 py-2 rounded-pill border-orange border">Curso de importación</p></a>
             </div>
         </div>
       </div>
@@ -463,19 +505,6 @@
               </div>
             </div>
             <div class="accordion-item acd-item py-4 px-4 bg-plomo mb-1 border-0 px-3 rounded-15">
-              <h2 class="bg-plomo border-0 mb-0 wow fadeInUp" data-wow-duration=".5s" data-wow-delay=".2s" id="headingTwo">
-                <button class="bg-transparent btn-acordion collapsed w-100 d-flex justify-content-between" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                  <p class="text-white small my-auto font-epilogue">¿Qué es agente de compra?</p>
-                  <i class="bi bi-plus-circle fs-4 text-white my-auto ms-2"></i>
-                </button>
-              </h2>
-              <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-                <div class="accordion-body px-0 text-dark font-epilogue">
-                  Ser tu aliado en china para conseguir los productos que los importadores desean a un precio mas rentable de lo que puedes conseguir en internet.
-                </div>
-              </div>
-            </div>
-            <div class="accordion-item acd-item py-4 px-4 bg-plomo mb-1 border-0 px-3 rounded-15">
               <h2 class="bg-plomo border-0 mb-0 wow fadeInUp" data-wow-duration=".5s" data-wow-delay=".2s" id="headingThree">
                 <button class="bg-transparent btn-acordion collapsed w-100 d-flex justify-content-between" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                   <p class="text-white small my-auto font-epilogue">¿Tienen curso de importación?</p>
@@ -489,19 +518,6 @@
               </div>
             </div>
             <div class="accordion-item acd-item py-4 px-4 bg-plomo mb-1 border-0 px-3 rounded-15">
-              <h2 class="bg-plomo border-0 mb-0 wow fadeInUp" data-wow-duration=".5s" data-wow-delay=".2s" id="headingThreeb">
-                <button class="bg-transparent btn-acordion collapsed w-100 d-flex justify-content-between" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThreeb" aria-expanded="false" aria-controls="collapseThreeb">
-                  <p class="text-white small my-auto font-epilogue">¿Pueden ayudarme a vajar a China?</p>
-                  <i class="bi bi-plus-circle fs-4 text-white my-auto ms-2"></i>
-                </button>
-              </h2>
-              <div id="collapseThreeb" class="accordion-collapse collapse" aria-labelledby="headingThreeb" data-bs-parent="#accordionExample">
-                <div class="accordion-body px-0 text-dark font-epilogue">
-                  Si claro, tenemos el equipo necesario para ayudarte en tu misión en china, te enviamos la carta de invitación y todo el soporte durante toda tú estadía en china.
-                </div>
-              </div>
-            </div>
-            <div class="accordion-item acd-item py-4 px-4 bg-plomo mb-1 border-0 px-3 rounded-15">
               <h2 class="bg-plomo border-0 mb-0 wow fadeInUp" data-wow-duration=".5s" data-wow-delay=".2s" id="headingThreec">
                 <button class="bg-transparent btn-acordion collapsed w-100 d-flex justify-content-between" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThreec" aria-expanded="false" aria-controls="collapseThreec">
                   <p class="text-white small my-auto font-epilogue">¿Dónde se encuentran?</p>
@@ -510,7 +526,7 @@
               </h2>
               <div id="collapseThreec" class="accordion-collapse collapse" aria-labelledby="headingThreec" data-bs-parent="#accordionExample">
                 <div class="accordion-body px-0 text-dark font-epilogue">
-                  Tenemos nuestras oficinas en China y Perú, brindamos servicios para cualquier país.
+                  Tenemos nuestra oficina en China ubicada en 浙江省金华市义乌市苏溪镇高岭村9排19号1楼仓库 小马 13185122926; asimismo, contamos con nuestra oficina en Perú, ubicada en Av. Nicolás Arriola 314, La Victoria, desde donde brindamos nuestros servicios a todo el país.
                 </div>
               </div>
             </div>

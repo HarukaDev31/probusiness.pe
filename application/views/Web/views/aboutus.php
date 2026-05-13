@@ -159,72 +159,38 @@
             <h6 class=" text-white mb-5 mb-md-0 fs-2 my-auto  wow fadeInUp" data-wow-duration=".5s" data-wow-delay=".2s">Nuestro equipo de trabajo</h6>
          </div>
          <div class="col-md-9 col-12 my-auto d-flex flex-wrap">
-            <div class="col-md-4 col-6 mb-6 px-2 wow fadeInUp" data-wow-duration=".5s" data-wow-delay=".2s">
+            <?php
+              $cdn_personal_nosotros = 'https://cdn.probusiness.pe/landing/personal';
+              $foto_personal = function ($archivo) use ($cdn_personal_nosotros) {
+                return $cdn_personal_nosotros . '/' . rawurlencode($archivo);
+              };
+              $equipo_nosotros = array(
+                array('archivo' => 'CEO.webp', 'nombre' => 'Miguel Villegas', 'cargo' => 'CEO', 'alt' => 'Miguel Villegas, CEO de Probusiness'),
+                array('archivo' => 'Gerente General.webp', 'nombre' => 'Patricia Alban', 'cargo' => 'Gerente General', 'alt' => 'Patricia Alban, Gerente General'),
+                array('archivo' => 'Project Manager.webp', 'nombre' => 'Meliza Valle', 'cargo' => 'Project Manager', 'alt' => 'Meliza Valle, Project Manager'),
+                array('archivo' => 'Jefe China.webp', 'nombre' => 'Armando Castañeda', 'cargo' => 'Jefe de Operaciones en China', 'alt' => 'Armando Castañeda, Jefe de Operaciones en China'),
+                array('archivo' => 'Jefe de Importaciones.webp', 'nombre' => 'Alfoso Abad', 'cargo' => 'Jefe de importaciones', 'alt' => 'Alfoso Abad, Jefe de importaciones'),
+                array('archivo' => 'Jefe de Ventas.webp', 'nombre' => 'José Contreras', 'cargo' => 'Jefe Comercial', 'alt' => 'José Contreras, Jefe Comercial'),
+                array('archivo' => 'Jefe de marketing.webp', 'nombre' => 'Juan Diego Ramos', 'cargo' => 'Jefe de Marketing', 'alt' => 'Juan Diego Ramos, Jefe de Marketing'),
+                array('archivo' => 'Jefe RRHH.webp', 'nombre' => 'Stephany Castañeda', 'cargo' => 'Jefa de RR.HH.', 'alt' => 'Stephany Castañeda, Jefa de RR.HH.'),
+              );
+              $delay_step = 0.12;
+              $delay = 0.2 - $delay_step;
+              foreach ($equipo_nosotros as $miembro) {
+                $delay = min($delay + $delay_step, 1.0);
+            ?>
+            <div class="col-md-4 col-6 mb-3 px-2 wow fadeInUp" data-wow-duration=".5s" data-wow-delay="<?php echo $delay; ?>s">
                 <div class="w-100">
                     <div class="bx-img">
-                         <img src="<?php echo base_url("assets/img/nosotros/team_miguel2.png"); ?>" class="img-fluid" alt="CEO Miguel Villegas">
+                         <img src="<?php echo htmlspecialchars($foto_personal($miembro['archivo']), ENT_QUOTES, 'UTF-8'); ?>" class="img-fluid" alt="<?php echo htmlspecialchars($miembro['alt'], ENT_QUOTES, 'UTF-8'); ?>" loading="lazy" decoding="async">
                     </div>
                     <div class="mt-md-3 mt-3">
-                        <h6 class="text-white mb-1">Miguel Villegas</h6>
-                        <p class="text-white">CEO</p>
+                        <h6 class="text-white mb-1"><?php echo htmlspecialchars($miembro['nombre'], ENT_QUOTES, 'UTF-8'); ?></h6>
+                        <p class="text-white mb-0"><?php echo htmlspecialchars($miembro['cargo'], ENT_QUOTES, 'UTF-8'); ?></p>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 col-6 mb-6 px-2 wow fadeInUp" data-wow-duration=".5s" data-wow-delay=".4s">
-                <div class="w-100">
-                    <div class="bx-img">
-                         <img src="<?php echo base_url("assets/img/nosotros/team_armando.png?ver=3.0.0"); ?>" class="img-fluid" alt="COO Armando Casteñada">
-                    </div>
-                    <div class="mt-md-3 mt-3">
-                        <h6 class="text-white mb-1">Armando Castañeda</h6>
-                        <p class="text-white">Director de Operaciones</p>
-                    </div>
-                </div>
-            </div>
-            <!-- <div class="col-md-4 col-6 mb-6 px-2 wow fadeInUp" data-wow-duration=".5s" data-wow-delay=".6s">
-              <div class="w-100">
-                <div class="bx-img">
-                  <img src="<?php echo base_url("assets/img/nosotros/team_geancarlos_collazos.jpeg"); ?>" class="img-fluid" alt="CTO Geancarlos Collazos">
-                </div>
-                <div class="mt-md-3 mt-3">
-                  <h6 class="text-white mb-1">Geancarlos Collazos</h6>
-                  <p class="text-white">Director de Tecnología</p>
-                </div>
-              </div>
-            </div> -->
-            <div class="col-md-4 col-6 mb-3 px-2 wow fadeInUp" data-wow-duration=".5s" data-wow-delay=".8s">
-              <div class="w-100">
-                <div class="bx-img">
-                  <img src="<?php echo base_url("assets/img/nosotros/team_patricia.jpeg"); ?>" class="img-fluid" alt="Administración Patricia Alban">
-                </div>
-                <div class="mt-md-3 mt-3">
-                  <h6 class="text-white mb-1">Patricia Alban</h6>
-                  <p class="text-white">Directora Administrativa</p>
-                </div>
-              </div>
-            </div>
-            <!-- <div class="col-md-4 col-6 mb-3 px-2 wow fadeInUp" data-wow-duration=".5s" data-wow-delay=".10s">
-              <div class="w-100">
-                <div class="bx-img">
-                  <img src="<?php echo base_url("assets/img/nosotros/team_daniel.jpeg"); ?>" class="img-fluid" alt="Director Comex Daniel Castillo">
-                </div>
-                <div class="mt-md-3 mt-3">
-                  <h6 class="text-white mb-1">Daniel Castillo</h6>
-                  <p class="text-white">Director Comex</p>
-                </div>
-              </div>
-            </div> -->
-            <div class="col-md-4 col-6 mb-3 px-2 wow fadeInUp" data-wow-duration=".5s" data-wow-delay=".10s">
-              <div class="w-100">
-                <div class="bx-img">
-                  <img src="<?php echo base_url("assets/img/nosotros/team_meliza.jpeg"); ?>" class="img-fluid" alt="Directora Comercial Meliza Valle">
-                </div>
-                <div class="mt-md-3 mt-3">
-                  <h6 class="text-white mb-1">Meliza Valle</h6>
-                  <p class="text-white">Directora Comercial</p>
-                </div>
-              </div>
-            </div>
+            <?php } ?>
          </div>
       </div>
     </div>
@@ -328,6 +294,28 @@
                 </div>
             </form>
         </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="ubicacion" class="py-5 bg-white">
+  <div class="container py-md-4 py-3">
+    <h6 class="text-dark fs-4 mb-4 mb-md-5 wow fadeInUp" data-wow-duration=".5s" data-wow-delay=".2s">Ubícanos</h6>
+    <div class="d-flex flex-wrap pb-2 wow fadeInUp" data-wow-duration=".5s" data-wow-delay=".2s">
+      <div class="col-md-6 mb-3 mb-md-0 col-12 px-2">
+        <div class="border h-100 p-3 border-black rounded-15">
+          <img src="<?php echo base_url("assets/img/curso/location.svg"); ?>" alt="" width="40" height="40" loading="lazy">
+          <h6 class="fw-bold mb-2 mt-3">Dirección</h6>
+          <div class="d-flex">
+            <div class="col-md-12">
+              <p class="mb-0 text-dark">Av. Nicolás Arriola 314, La Victoria, Lima</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-12 px-2 wow fadeInUp" data-wow-duration=".5s" data-wow-delay=".2s">
+        <iframe title="Ubicación oficina Probusiness — Av. Nicolás Arriola 314, La Victoria" src="https://www.google.com/maps?q=Av.%20Nicol%C3%A1s%20Arriola%20314%2C%20La%20Victoria%2C%20Lima%2C%20Per%C3%BA&amp;output=embed" width="100%" height="250" style="border:0;border-radius:15px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
     </div>
   </div>
