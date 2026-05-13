@@ -158,7 +158,7 @@
          <div class="col-md-3 col-12 ">
             <h6 class=" text-white mb-5 mb-md-0 fs-2 my-auto  wow fadeInUp" data-wow-duration=".5s" data-wow-delay=".2s">Nuestro equipo de trabajo</h6>
          </div>
-         <div class="col-md-9 col-12 my-auto d-flex flex-wrap">
+         <div class="col-md-9 col-12 my-auto d-flex flex-wrap nosotros-equipo-fotos">
             <?php
               $cdn_personal_nosotros = 'https://cdn.probusiness.pe/landing/personal';
               $foto_personal = function ($archivo) use ($cdn_personal_nosotros) {
