@@ -71,14 +71,7 @@ class Inicio extends CI_Controller
 
     public function carga_consolidada()
     {
-        $this->load->view('Web/header');
-        $iNumeroWhatsApp = '51941874649'; //alexis carga consolidad
-        $this->load->view('Web/layout/menu', array(
-            'iNumeroWhatsApp' => $iNumeroWhatsApp,
-        ));
-        $this->load->view('Web/carga_consolidada', array(
-            'iNumeroWhatsApp' => $iNumeroWhatsApp,
-        ));
+        redirect('carga_consolidada/', 'location', 301);
     }
 
     public function importacion_grupal()
