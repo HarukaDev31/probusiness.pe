@@ -58,7 +58,8 @@ $route['agente_compra'] = 'Inicio/agente_compra';
 // Migrado a landing Astro estática en /carga_consolidada/
 // $route['carga_consolidada'] = 'Inicio/carga_consolidada';
 $route['importacion_grupal'] = 'Inicio/importacion_grupal';
-$route['curso'] = 'Inicio/curso';
+// Migrado a landing Astro estática en /curso/
+// $route['curso'] = 'Inicio/curso';
 $route['curso_v2'] = 'Inicio/curso_v2';
 $route['agente_viajes'] = 'Inicio/agente_viajes';
 $route['viaje_negocios'] = 'Inicio/viaje_negocios';
