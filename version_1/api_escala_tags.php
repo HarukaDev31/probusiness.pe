@@ -24,7 +24,7 @@ $statusCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
 
 
 // Close the cURL session
-curl_close($ch);
+if (PHP_VERSION_ID < 80000) { curl_close($ch); }
 
 echo "<pre>";
 print_r($response);

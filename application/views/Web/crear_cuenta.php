@@ -66,7 +66,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
             curl_setopt($ch, CURLOPT_POSTFIELDS, $data_json);
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
             $respuesta = curl_exec($ch);
-            curl_close($ch);
+            if (PHP_VERSION_ID < 80000) { curl_close($ch); }
 
             $respuesta = json_decode($respuesta);
             if($respuesta->status == 'success') {
@@ -114,7 +114,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
                 $respuesta2 = curl_exec($ch);
                 $httpcode = curl_getinfo($ch, CURLINFO_HTTP_CODE );	
-                curl_close($ch);
+                if (PHP_VERSION_ID < 80000) { curl_close($ch); }
 
                 echo json_encode(array('type' => 'success', 'message' => '¡Bienvenido a *Tiendaris*!' . "\n\n" . $sBody, 'respone' => $respuesta, 'respone2' => $respuesta2));
                 exit;
