@@ -503,7 +503,8 @@ class Inicio extends CI_Controller
 
         $sRaw = @file_get_contents($sUrl, false, stream_context_create($arrContext));
         $iHttpCode = 0;
-        if (isset($http_response_header[0]) && preg_match('#HTTP/\S+\s+(\d+)#', $http_response_header[0], $arrMatches)) {
+        $arrHeaders = function_exists('http_get_last_response_headers') ? http_get_last_response_headers() : (($arrVars = get_defined_vars()) && isset($arrVars['http_response_header']) ? $arrVars['http_response_header'] : null);
+        if (isset($arrHeaders[0]) && preg_match('#HTTP/\S+\s+(\d+)#', $arrHeaders[0], $arrMatches)) {
             $iHttpCode = (int) $arrMatches[1];
         }
 

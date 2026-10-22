@@ -72,7 +72,7 @@ if ( !preg_match("/^[A-Za-z\\-ñ \']+$/", $sNombresApellidos) && strlen($sNombre
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     $respuesta = curl_exec($ch);
     $httpcode = curl_getinfo($ch, CURLINFO_HTTP_CODE );	
-    curl_close($ch);
+    if (PHP_VERSION_ID < 80000) { curl_close($ch); }
 
     echo json_encode(array('type' => 'success', 'message' => 'Mas informacion de Tiendaris' . "\n\n" . $sBody, 'response' => $respuesta));
     exit;

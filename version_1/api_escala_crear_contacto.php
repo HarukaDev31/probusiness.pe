@@ -54,7 +54,7 @@ function createContact($data) {
         }
 
         // Close the cURL session
-        curl_close($ch);
+        if (PHP_VERSION_ID < 80000) { curl_close($ch); }
 
         return $response;
     } catch (Exception $ex) {
