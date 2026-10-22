@@ -536,6 +536,8 @@ class curl {
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class curl_cache {
+    /** @var int */
+    public $ttl = 1200;
     /** @var string */
     public $dir = '';
     /**
