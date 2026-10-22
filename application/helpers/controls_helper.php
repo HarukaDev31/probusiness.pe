@@ -1,7 +1,7 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 date_default_timezone_set('America/Lima');
 
-function Select($idSelect, $name_value_Select, $Nombre, $arrData, $select = null, $sinSeleccionar = false, $extraClass){
+function Select($idSelect, $name_value_Select, $Nombre, $arrData, $select, $sinSeleccionar, $extraClass){
 	if( (!is_object($arrData)) && count($arrData) == 0) return;
 
 	$html = "<select id=\"$idSelect\" name=\"$name_value_Select\" class=\"form-control required $extraClass\">";
